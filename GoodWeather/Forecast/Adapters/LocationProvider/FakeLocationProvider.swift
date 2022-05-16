@@ -10,7 +10,7 @@ import Combine
 
 final class FakeLocationProvider: LocationProvider {
     
-    private let fakeLocation = (52.237049, 21.017532)
+    private let fakeLocation = (21.017532, 52.237049)
     private let subject = PassthroughSubject<(Double, Double), Never>()
   
     func refreshLocation() {
