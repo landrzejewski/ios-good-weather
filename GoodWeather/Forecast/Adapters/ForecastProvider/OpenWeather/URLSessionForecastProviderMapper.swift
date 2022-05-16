@@ -12,7 +12,9 @@ final class URLSessionForecastProviderMapper {
     private let icons = ["01d": "sun.max.fill", "02d": "cloud.sun.fill", "03d": "cloud.fill", "04d": "smoke.fill", "09d": "cloud.rain.fill", "10d": "cloud.sun.rain.fill", "11d": "cloud.sun.bolt.fill", "13d": "snow", "50d": "cloud.fog.fill"]
     
     func toDomain(forecastDto: ForecastDto) ->  Forecast {
-        return Forecast(city: forecastDto.city.name, forecast: forecastDto.forecast.map(toDomain(dayForecastDto:)))
+        let cityName = forecastDto.city.name
+        let city = cityName.isEmpty ? "Current location" : cityName
+        return Forecast(city: city, forecast: forecastDto.forecast.map(toDomain(dayForecastDto:)))
     }
     
     private func toDomain(dayForecastDto: DayForecastDto) -> DayForecast {
