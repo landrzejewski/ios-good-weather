@@ -9,11 +9,18 @@ import Foundation
 import Combine
 
 final class FakeLocationProvider: LocationProvider {
+    
+    private let fakeLocation = (52.237049, 21.017532)
+    private let subject = PassthroughSubject<(Double, Double), Never>()
   
     func refreshLocation() {
+        subject.send(fakeLocation)
     }
     
-    var location = Just((52.237049, 21.017532))
-        .eraseToAnyPublisher()
+    var location: AnyPublisher<(Double, Double), Never>
+    
+    init() {
+        location = subject.eraseToAnyPublisher()
+    }
     
 }
