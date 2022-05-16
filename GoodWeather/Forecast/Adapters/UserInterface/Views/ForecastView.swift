@@ -13,6 +13,10 @@ struct ForecastView: View {
     var viewModel: ForecastViewModel
     @EnvironmentObject
     var router: Router
+    @State
+    var showSettings = false
+    @AppStorage("cityName") // should be moved to viewModel
+    private var storedCityName = ""
     
     var body: some View {
         ZStack {
@@ -26,6 +30,7 @@ struct ForecastView: View {
                     Spacer()
                     Image(systemName: "slider.horizontal.3")
                         .templateStyle(width: 20, height: 20)
+                        .onTapGesture { showSettings = true }
                 }
                 .padding()
                 Text(viewModel.cityName)
@@ -54,7 +59,15 @@ struct ForecastView: View {
                 Spacer()
              }
         }
-    }
+        .sheet(isPresented: $showSettings) { ForecastSettingsView() }
+        .onChange(of: storedCityName, perform: viewModel.refreshForecast(for:))
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            viewModel.refreshForecast(for: storedCityName)
+        }
+        .alert(isPresented: $viewModel.errors) {
+            Alert(title: Text("Alert"), message: Text("Weather refresh failed"), dismissButton: .default(Text("Close")))
+        }
+     }
 }
 
 struct ForecastView_Previews: PreviewProvider {

@@ -28,11 +28,13 @@ final class ForecastViewModel: ObservableObject {
         self.getForecastUseCase = getForecastUseCase
         self.locationProvider = locationProvider
         self.mapper = mapper
+        if let cityName = UserDefaults.standard.string(forKey: "cityName") {
+            refreshForecast(for: cityName)
+        }
         locationProvider.location.sink { location in
             self.getForecastUseCase.getForecast(for: location, callback: self.onForecastRefreshed)
         }
         .store(in: &cancellable)
-        refreshForecast(for: "Warsaw")
     }
     
     func refreshForecast(for city: String) {

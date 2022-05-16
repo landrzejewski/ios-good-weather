@@ -41,6 +41,8 @@
 		DF26CF4D28327A3B00B0F60B /* DayForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF4C28327A3B00B0F60B /* DayForecastView.swift */; };
 		DF26CF4F28327E2D00B0F60B /* ForecastFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF4E28327E2D00B0F60B /* ForecastFactory.swift */; };
 		DF26CF5128327F3A00B0F60B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF5028327F3900B0F60B /* Route.swift */; };
+		DF26CF53283283ED00B0F60B /* ForecastSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF52283283ED00B0F60B /* ForecastSettingsView.swift */; };
+		DF26CF552832863A00B0F60B /* DefaultButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF542832863A00B0F60B /* DefaultButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		DF26CF4C28327A3B00B0F60B /* DayForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecastView.swift; sourceTree = "<group>"; };
 		DF26CF4E28327E2D00B0F60B /* ForecastFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastFactory.swift; sourceTree = "<group>"; };
 		DF26CF5028327F3900B0F60B /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		DF26CF52283283ED00B0F60B /* ForecastSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSettingsView.swift; sourceTree = "<group>"; };
+		DF26CF542832863A00B0F60B /* DefaultButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +316,7 @@
 				DF26CF312832562100B0F60B /* ForecastView.swift */,
 				DF26CF4C28327A3B00B0F60B /* DayForecastView.swift */,
 				DF26CF382832584A00B0F60B /* ForecastDetailsView.swift */,
+				DF26CF52283283ED00B0F60B /* ForecastSettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				DF26CF432832621400B0F60B /* Image+ext.swift */,
 				DF26CF462832644900B0F60B /* Text+ext.swift */,
 				DF26CF482832651A00B0F60B /* View+ext.swift */,
+				DF26CF542832863A00B0F60B /* DefaultButtonStyle.swift */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -468,6 +474,7 @@
 			files = (
 				DF26CF2A2832535E00B0F60B /* FakeLocationProvider.swift in Sources */,
 				DF26CEE22832402D00B0F60B /* RouterView.swift in Sources */,
+				DF26CF53283283ED00B0F60B /* ForecastSettingsView.swift in Sources */,
 				DF26CF4B2832769100B0F60B /* ForecastViewModelMapper.swift in Sources */,
 				DF26CF5128327F3A00B0F60B /* Route.swift in Sources */,
 				DF26CF422832605600B0F60B /* Color+ext.swift in Sources */,
@@ -484,6 +491,7 @@
 				DF26CF3B283258EC00B0F60B /* ForecastViewModel.swift in Sources */,
 				DF26CF18283245DD00B0F60B /* ForecastProvider.swift in Sources */,
 				DF26CF3F28325B4700B0F60B /* ApplicationFactory.swift in Sources */,
+				DF26CF552832863A00B0F60B /* DefaultButtonStyle.swift in Sources */,
 				DF26CF4F28327E2D00B0F60B /* ForecastFactory.swift in Sources */,
 				DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */,
 				DF26CF222832486E00B0F60B /* LocationProvider.swift in Sources */,
