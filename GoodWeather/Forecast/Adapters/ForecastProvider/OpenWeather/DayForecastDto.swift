@@ -9,12 +9,13 @@ import Foundation
 
 struct DayForecastDto: Decodable {
     
+    let id = UUID()
     let date: Double
     let temperature: TemperatureDto
     let pressure: Double
     let conditions: [ConditionsDto]
     
-    enum CondingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         
         case date = "dt"
         case temperature = "temp"

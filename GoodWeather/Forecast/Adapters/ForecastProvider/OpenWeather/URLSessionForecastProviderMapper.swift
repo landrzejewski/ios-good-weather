@@ -16,13 +16,14 @@ final class URLSessionForecastProviderMapper {
     }
     
     private func toDomain(dayForecastDto: DayForecastDto) -> DayForecast {
+        let id = dayForecastDto.id
         let date = Date(timeIntervalSince1970: dayForecastDto.date)
         let temperature = dayForecastDto.temperature.day
         let pressure = dayForecastDto.pressure
         let conditions = dayForecastDto.conditions.first
         let icon = icons[conditions?.icon ?? ""] ?? "xmark.circle"
         let description = conditions?.description ?? ""
-        return DayForecast(date: date, temperature: temperature, pressure: pressure, icon: icon, description: description)
+        return DayForecast(id: id, date: date, temperature: temperature, pressure: pressure, icon: icon, description: description)
     }
     
 }

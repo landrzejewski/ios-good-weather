@@ -12,7 +12,7 @@ struct ForecastDto: Decodable {
     let city: CityDto
     let forecast: [DayForecastDto]
     
-    enum CondingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         
         case city
         case forecast = "list"

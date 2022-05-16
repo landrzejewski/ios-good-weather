@@ -53,6 +53,7 @@ final class URLSessionForecastProvider {
                 let forecast = try self.decoder.decode(ForecastDto.self, from: json)
                 callback(.success(forecast))
             } catch {
+                print(error)
                 callback(.failure(.parsingFailed(error.localizedDescription)))
             }
         }
