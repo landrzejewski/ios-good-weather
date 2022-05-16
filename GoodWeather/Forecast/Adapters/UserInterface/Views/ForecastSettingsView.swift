@@ -26,11 +26,11 @@ struct ForecastSettingsView: View {
             Form {
                 Section(header: Text("Place")) {
                     TextField("Enter city name", text: $cityName)
+                        .onAppear { cityName = storedCityName }
+                        .onDisappear { storedCityName = cityName }
                 }
             }
         }
-        .onAppear { cityName = storedCityName }
-        .onDisappear { storedCityName = cityName }
     }
     
     private var closeButton: some View {
