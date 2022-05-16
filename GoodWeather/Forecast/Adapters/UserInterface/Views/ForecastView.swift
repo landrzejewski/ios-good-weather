@@ -11,10 +11,12 @@ struct ForecastView: View {
     
     @ObservedObject
     var viewModel: ForecastViewModel
+    @Environment(\.scenePhase)
+    private var scenePhase
     @EnvironmentObject
-    var router: Router
+    private var router: Router
     @State
-    var showSettings = false
+    private var showSettings = false
     @AppStorage("cityName") // should be moved to viewModel
     private var storedCityName = ""
     
@@ -61,8 +63,13 @@ struct ForecastView: View {
         }
         .sheet(isPresented: $showSettings) { ForecastSettingsView() }
         .onChange(of: storedCityName, perform: viewModel.refreshForecast(for:))
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-            viewModel.refreshForecast(for: storedCityName)
+        .onChange(of: scenePhase) { phase in
+            switch phase {
+            case .active:
+                viewModel.refreshForecast(for: storedCityName)
+            default:
+                {}()
+            }
         }
         .alert(isPresented: $viewModel.errors) {
             Alert(title: Text("Alert"), message: Text("Weather refresh failed"), dismissButton: .default(Text("Close")))
