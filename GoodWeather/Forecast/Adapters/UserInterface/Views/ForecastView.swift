@@ -51,7 +51,7 @@ struct ForecastView: View {
                 }
                 Spacer()
                 HStack(spacing: 16) {
-                    ForEach(viewModel.nextDaysForecast, id: \.date) {
+                    ForEach(viewModel.nextDaysForecast, id: \.id) {
                         DayForecastView(viewModel: $0)
                             .onTapGesture { router.route = .forecastDetails }
                     }

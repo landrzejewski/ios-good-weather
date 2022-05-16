@@ -9,6 +9,7 @@ import Foundation
 
 struct DayForecast {
     
+    let id: UUID
     let date: Date
     let temperature: Double
     let pressure: Double

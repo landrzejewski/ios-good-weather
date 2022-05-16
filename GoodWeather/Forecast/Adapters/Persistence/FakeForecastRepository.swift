@@ -21,7 +21,7 @@ final class FakeForecastReposiory: ForecastQueries, ForecastUpdates {
     
     func save(forecast: [DayForecast], for city: String) throws {
         forecast.forEach { dayForecast in
-            data[UUID()] = dayForecast
+            data[dayForecast.id] = dayForecast
         }
     }
     

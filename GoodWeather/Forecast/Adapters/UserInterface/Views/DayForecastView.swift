@@ -25,7 +25,7 @@ struct DayForecastView: View {
 
 struct DayForecastView_Previews: PreviewProvider {
     static var previews: some View {
-        DayForecastView(viewModel: DayForecastViewModel(date: "Pn", temperature: "18°", pressure: "1000 hPa", icon: "sun.max.fill", description: "Clear sky"))
+        DayForecastView(viewModel: DayForecastViewModel(id: UUID(), date: "Pn", temperature: "18°", pressure: "1000 hPa", icon: "sun.max.fill", description: "Clear sky"))
             .preferredColorScheme(.dark)
     }
 }
