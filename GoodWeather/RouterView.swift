@@ -10,7 +10,7 @@ import SwiftUI
 struct RouterView: View {
     
     @EnvironmentObject
-    var router: Router
+    private var router: Router
     
     var body: some View {
         let factory = ApplicationFactory.shared
