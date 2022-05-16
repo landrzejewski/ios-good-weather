@@ -66,7 +66,7 @@ struct ForecastView: View {
         .onChange(of: scenePhase) { phase in
             switch phase {
             case .active:
-                viewModel.refreshForecast(for: storedCityName)
+                viewModel.refreshForecast()
             default:
                 {}()
             }
