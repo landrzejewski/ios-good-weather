@@ -10,9 +10,9 @@ import SwiftUI
 struct ForecastSettingsView: View {
     
     @State
-    var cityName = ""
+    private var cityName = ""
     @Environment(\.presentationMode)
-    var presentationMode
+    private var presentationMode
     @AppStorage("cityName") // should be moved to viewModel
     private var storedCityName = ""
     
