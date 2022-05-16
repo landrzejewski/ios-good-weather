@@ -28,7 +28,6 @@
 		DF26CF2A2832535E00B0F60B /* FakeLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF292832535E00B0F60B /* FakeLocationProvider.swift */; };
 		DF26CF2D2832543A00B0F60B /* FakeForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF2C2832543A00B0F60B /* FakeForecastRepository.swift */; };
 		DF26CF322832562100B0F60B /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF312832562100B0F60B /* ForecastView.swift */; };
-		DF26CF352832568100B0F60B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF342832568100B0F60B /* Route.swift */; };
 		DF26CF37283256F000B0F60B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF36283256F000B0F60B /* Router.swift */; };
 		DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF382832584A00B0F60B /* ForecastDetailsView.swift */; };
 		DF26CF3B283258EC00B0F60B /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF3A283258EC00B0F60B /* ForecastViewModel.swift */; };
@@ -38,6 +37,10 @@
 		DF26CF442832621400B0F60B /* Image+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF432832621400B0F60B /* Image+ext.swift */; };
 		DF26CF472832644900B0F60B /* Text+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF462832644900B0F60B /* Text+ext.swift */; };
 		DF26CF492832651A00B0F60B /* View+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF482832651A00B0F60B /* View+ext.swift */; };
+		DF26CF4B2832769100B0F60B /* ForecastViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF4A2832769100B0F60B /* ForecastViewModelMapper.swift */; };
+		DF26CF4D28327A3B00B0F60B /* DayForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF4C28327A3B00B0F60B /* DayForecastView.swift */; };
+		DF26CF4F28327E2D00B0F60B /* ForecastFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF4E28327E2D00B0F60B /* ForecastFactory.swift */; };
+		DF26CF5128327F3A00B0F60B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF5028327F3900B0F60B /* Route.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +85,6 @@
 		DF26CF292832535E00B0F60B /* FakeLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLocationProvider.swift; sourceTree = "<group>"; };
 		DF26CF2C2832543A00B0F60B /* FakeForecastRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeForecastRepository.swift; sourceTree = "<group>"; };
 		DF26CF312832562100B0F60B /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
-		DF26CF342832568100B0F60B /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		DF26CF36283256F000B0F60B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DF26CF382832584A00B0F60B /* ForecastDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetailsView.swift; sourceTree = "<group>"; };
 		DF26CF3A283258EC00B0F60B /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
@@ -92,6 +94,10 @@
 		DF26CF432832621400B0F60B /* Image+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ext.swift"; sourceTree = "<group>"; };
 		DF26CF462832644900B0F60B /* Text+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+ext.swift"; sourceTree = "<group>"; };
 		DF26CF482832651A00B0F60B /* View+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ext.swift"; sourceTree = "<group>"; };
+		DF26CF4A2832769100B0F60B /* ForecastViewModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewModelMapper.swift; sourceTree = "<group>"; };
+		DF26CF4C28327A3B00B0F60B /* DayForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecastView.swift; sourceTree = "<group>"; };
+		DF26CF4E28327E2D00B0F60B /* ForecastFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastFactory.swift; sourceTree = "<group>"; };
+		DF26CF5028327F3900B0F60B /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 				DF26CF3E28325B4700B0F60B /* ApplicationFactory.swift */,
 				DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */,
 				DF26CEE12832402D00B0F60B /* RouterView.swift */,
+				DF26CF5028327F3900B0F60B /* Route.swift */,
 				DF26CEE32832402E00B0F60B /* Assets.xcassets */,
 				DF26CEE52832402E00B0F60B /* Preview Content */,
 			);
@@ -184,6 +191,7 @@
 				DF26CF0C2832416600B0F60B /* Adapters */,
 				DF26CF0A2832410F00B0F60B /* Ports */,
 				DF26CF0B2832413900B0F60B /* Domain */,
+				DF26CF4E28327E2D00B0F60B /* ForecastFactory.swift */,
 			);
 			path = Forecast;
 			sourceTree = "<group>";
@@ -292,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				DF26CF3A283258EC00B0F60B /* ForecastViewModel.swift */,
+				DF26CF4A2832769100B0F60B /* ForecastViewModelMapper.swift */,
 				DF26CF3C2832594B00B0F60B /* DayForecastViewModel.swift */,
 			);
 			path = ViewModels;
@@ -301,25 +310,16 @@
 			isa = PBXGroup;
 			children = (
 				DF26CF312832562100B0F60B /* ForecastView.swift */,
+				DF26CF4C28327A3B00B0F60B /* DayForecastView.swift */,
 				DF26CF382832584A00B0F60B /* ForecastDetailsView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		DF26CF332832565D00B0F60B /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				DF26CF342832568100B0F60B /* Route.swift */,
-				DF26CF36283256F000B0F60B /* Router.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		DF26CF402832604800B0F60B /* Commons */ = {
 			isa = PBXGroup;
 			children = (
 				DF26CF452832636400B0F60B /* UserInterface */,
-				DF26CF332832565D00B0F60B /* Router */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -327,6 +327,7 @@
 		DF26CF452832636400B0F60B /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				DF26CF36283256F000B0F60B /* Router.swift */,
 				DF26CF412832605600B0F60B /* Color+ext.swift */,
 				DF26CF432832621400B0F60B /* Image+ext.swift */,
 				DF26CF462832644900B0F60B /* Text+ext.swift */,
@@ -467,7 +468,10 @@
 			files = (
 				DF26CF2A2832535E00B0F60B /* FakeLocationProvider.swift in Sources */,
 				DF26CEE22832402D00B0F60B /* RouterView.swift in Sources */,
+				DF26CF4B2832769100B0F60B /* ForecastViewModelMapper.swift in Sources */,
+				DF26CF5128327F3A00B0F60B /* Route.swift in Sources */,
 				DF26CF422832605600B0F60B /* Color+ext.swift in Sources */,
+				DF26CF4D28327A3B00B0F60B /* DayForecastView.swift in Sources */,
 				DF26CF472832644900B0F60B /* Text+ext.swift in Sources */,
 				DF26CF272832521100B0F60B /* FakeForecastProvider.swift in Sources */,
 				DF26CF2D2832543A00B0F60B /* FakeForecastRepository.swift in Sources */,
@@ -480,8 +484,8 @@
 				DF26CF3B283258EC00B0F60B /* ForecastViewModel.swift in Sources */,
 				DF26CF18283245DD00B0F60B /* ForecastProvider.swift in Sources */,
 				DF26CF3F28325B4700B0F60B /* ApplicationFactory.swift in Sources */,
+				DF26CF4F28327E2D00B0F60B /* ForecastFactory.swift in Sources */,
 				DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */,
-				DF26CF352832568100B0F60B /* Route.swift in Sources */,
 				DF26CF222832486E00B0F60B /* LocationProvider.swift in Sources */,
 				DF26CF1F283247F300B0F60B /* ForecastUpdates.swift in Sources */,
 				DF26CF442832621400B0F60B /* Image+ext.swift in Sources */,

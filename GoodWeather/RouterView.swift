@@ -16,7 +16,7 @@ struct RouterView: View {
         let factory = ApplicationFactory.shared
         switch router.route {
         case .forecast:
-            ForecastView(viewModel: factory.forecastViewModel)
+            ForecastView(viewModel: factory.forecast.forecastViewModel)
         case .forecastDetails:
             ForecastDetailsView()
         }
