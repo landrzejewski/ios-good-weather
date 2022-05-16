@@ -14,6 +14,16 @@
 		DF26CEF12832402E00B0F60B /* GoodWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEF02832402E00B0F60B /* GoodWeatherTests.swift */; };
 		DF26CEFB2832402E00B0F60B /* GoodWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEFA2832402E00B0F60B /* GoodWeatherUITests.swift */; };
 		DF26CEFD2832402E00B0F60B /* GoodWeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEFC2832402E00B0F60B /* GoodWeatherUITestsLaunchTests.swift */; };
+		DF26CF0F283241E300B0F60B /* GetForecastUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF0E283241E300B0F60B /* GetForecastUseCase.swift */; };
+		DF26CF11283243F800B0F60B /* GetForecastError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF10283243F800B0F60B /* GetForecastError.swift */; };
+		DF26CF132832445A00B0F60B /* DayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF122832445A00B0F60B /* DayForecast.swift */; };
+		DF26CF15283244C400B0F60B /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF14283244C400B0F60B /* Forecast.swift */; };
+		DF26CF18283245DD00B0F60B /* ForecastProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF17283245DD00B0F60B /* ForecastProvider.swift */; };
+		DF26CF1A2832465700B0F60B /* ForecastProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF192832465700B0F60B /* ForecastProviderError.swift */; };
+		DF26CF1D2832472D00B0F60B /* ForecastQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF1C2832472D00B0F60B /* ForecastQueries.swift */; };
+		DF26CF1F283247F300B0F60B /* ForecastUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF1E283247F300B0F60B /* ForecastUpdates.swift */; };
+		DF26CF222832486E00B0F60B /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF212832486E00B0F60B /* LocationProvider.swift */; };
+		DF26CF242832494200B0F60B /* GetForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF232832494200B0F60B /* GetForecastService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +54,16 @@
 		DF26CEF62832402E00B0F60B /* GoodWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF26CEFA2832402E00B0F60B /* GoodWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWeatherUITests.swift; sourceTree = "<group>"; };
 		DF26CEFC2832402E00B0F60B /* GoodWeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DF26CF0E283241E300B0F60B /* GetForecastUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetForecastUseCase.swift; sourceTree = "<group>"; };
+		DF26CF10283243F800B0F60B /* GetForecastError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetForecastError.swift; sourceTree = "<group>"; };
+		DF26CF122832445A00B0F60B /* DayForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecast.swift; sourceTree = "<group>"; };
+		DF26CF14283244C400B0F60B /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		DF26CF17283245DD00B0F60B /* ForecastProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastProvider.swift; sourceTree = "<group>"; };
+		DF26CF192832465700B0F60B /* ForecastProviderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastProviderError.swift; sourceTree = "<group>"; };
+		DF26CF1C2832472D00B0F60B /* ForecastQueries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastQueries.swift; sourceTree = "<group>"; };
+		DF26CF1E283247F300B0F60B /* ForecastUpdates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastUpdates.swift; sourceTree = "<group>"; };
+		DF26CF212832486E00B0F60B /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		DF26CF232832494200B0F60B /* GetForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetForecastService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +114,7 @@
 		DF26CEDE2832402D00B0F60B /* GoodWeather */ = {
 			isa = PBXGroup;
 			children = (
+				DF26CF09283240C800B0F60B /* Forecast */,
 				DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */,
 				DF26CEE12832402D00B0F60B /* ContentView.swift */,
 				DF26CEE32832402E00B0F60B /* Assets.xcassets */,
@@ -125,6 +146,79 @@
 				DF26CEFC2832402E00B0F60B /* GoodWeatherUITestsLaunchTests.swift */,
 			);
 			path = GoodWeatherUITests;
+			sourceTree = "<group>";
+		};
+		DF26CF09283240C800B0F60B /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				DF26CF0C2832416600B0F60B /* Adapters */,
+				DF26CF0B2832413900B0F60B /* Domain */,
+				DF26CF0A2832410F00B0F60B /* Ports */,
+			);
+			path = Forecast;
+			sourceTree = "<group>";
+		};
+		DF26CF0A2832410F00B0F60B /* Ports */ = {
+			isa = PBXGroup;
+			children = (
+				DF26CF202832485A00B0F60B /* LocationProvider */,
+				DF26CF1B283246D600B0F60B /* Persistence */,
+				DF26CF16283245AA00B0F60B /* ForecastProvider */,
+				DF26CF0D283241B900B0F60B /* UseCases */,
+			);
+			path = Ports;
+			sourceTree = "<group>";
+		};
+		DF26CF0B2832413900B0F60B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				DF26CF122832445A00B0F60B /* DayForecast.swift */,
+				DF26CF14283244C400B0F60B /* Forecast.swift */,
+				DF26CF232832494200B0F60B /* GetForecastService.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		DF26CF0C2832416600B0F60B /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		DF26CF0D283241B900B0F60B /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DF26CF0E283241E300B0F60B /* GetForecastUseCase.swift */,
+				DF26CF10283243F800B0F60B /* GetForecastError.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		DF26CF16283245AA00B0F60B /* ForecastProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DF26CF17283245DD00B0F60B /* ForecastProvider.swift */,
+				DF26CF192832465700B0F60B /* ForecastProviderError.swift */,
+			);
+			path = ForecastProvider;
+			sourceTree = "<group>";
+		};
+		DF26CF1B283246D600B0F60B /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				DF26CF1C2832472D00B0F60B /* ForecastQueries.swift */,
+				DF26CF1E283247F300B0F60B /* ForecastUpdates.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		DF26CF202832485A00B0F60B /* LocationProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DF26CF212832486E00B0F60B /* LocationProvider.swift */,
+			);
+			path = LocationProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +353,16 @@
 			files = (
 				DF26CEE22832402D00B0F60B /* ContentView.swift in Sources */,
 				DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */,
+				DF26CF1A2832465700B0F60B /* ForecastProviderError.swift in Sources */,
+				DF26CF242832494200B0F60B /* GetForecastService.swift in Sources */,
+				DF26CF11283243F800B0F60B /* GetForecastError.swift in Sources */,
+				DF26CF18283245DD00B0F60B /* ForecastProvider.swift in Sources */,
+				DF26CF222832486E00B0F60B /* LocationProvider.swift in Sources */,
+				DF26CF1F283247F300B0F60B /* ForecastUpdates.swift in Sources */,
+				DF26CF132832445A00B0F60B /* DayForecast.swift in Sources */,
+				DF26CF15283244C400B0F60B /* Forecast.swift in Sources */,
+				DF26CF1D2832472D00B0F60B /* ForecastQueries.swift in Sources */,
+				DF26CF0F283241E300B0F60B /* GetForecastUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
