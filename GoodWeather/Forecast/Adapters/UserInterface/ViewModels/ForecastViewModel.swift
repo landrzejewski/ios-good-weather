@@ -46,12 +46,14 @@ final class ForecastViewModel: ObservableObject {
     }
  
     private func onForecastRefreshed(_ result: Result<Forecast, GetForecastError>) {
-        switch result {
-        case .success(let forecast):
-            errors = false
-            update(forecast)
-        case .failure(_):
-            errors = true
+        onMain { [self] in
+            switch result {
+            case .success(let forecast):
+                errors = false
+                update(forecast)
+            case .failure(_):
+                errors = true
+            }
         }
     }
     

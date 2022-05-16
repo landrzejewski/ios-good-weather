@@ -9,12 +9,19 @@ import Foundation
 
 final class ForecastFactory {
     
-    private lazy var forecastProvider: ForecastProvider = FakeForecastProvider()
-    private lazy var forecastRepository: ForecastQueries & ForecastUpdates = FakeForecastReposiory()
-    private lazy var getForecastService: GetForecastUseCase = GetForecastService(forecastProvider: self.forecastProvider, forecastRepository: self.forecastRepository)
-    private lazy var locationProvider: LocationProvider = FakeLocationProvider()
+    private lazy var fakeForecastProvider: ForecastProvider = FakeForecastProvider()
+    
+    private lazy var urlSessionForecastProviderMapper: URLSessionForecastProviderMapper = URLSessionForecastProviderMapper()
+    private lazy var urlSessionForecastProvider: URLSessionForecastProvider =
+        URLSessionForecastProvider(url: "https://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&units=metric&APPID=b933866e6489f58987b2898c89f542b8")
+    private lazy var urlSessionProviderAdapter: URLSessionForecastProviderAdapter
+        = URLSessionForecastProviderAdapter(provider: urlSessionForecastProvider, mapper: urlSessionForecastProviderMapper)
+    
+    private lazy var fakeforecastRepository: ForecastQueries & ForecastUpdates = FakeForecastReposiory()
+    private lazy var getForecastService: GetForecastUseCase = GetForecastService(forecastProvider: urlSessionProviderAdapter, forecastRepository: fakeforecastRepository)
+    private lazy var fakeLocationProvider: LocationProvider = FakeLocationProvider()
     private lazy var forecastViewModelMapper: ForecastViewModelMapper = ForecastViewModelMapper()
 
-    lazy var forecastViewModel = ForecastViewModel(getForecastUseCase: self.getForecastService, locationProvider: self.locationProvider, mapper: self.forecastViewModelMapper)
+    lazy var forecastViewModel = ForecastViewModel(getForecastUseCase: getForecastService, locationProvider: fakeLocationProvider, mapper: forecastViewModelMapper)
     
 }
