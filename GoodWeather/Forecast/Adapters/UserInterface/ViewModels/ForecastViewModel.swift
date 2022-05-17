@@ -36,7 +36,7 @@ final class ForecastViewModel: ObservableObject {
     }
     
     func refreshForecast() {
-        if let cityName = UserDefaults.standard.string(forKey: "cityName"), !cityName.isEmpty {
+        if !cityName.isEmpty {
             refreshForecast(for: cityName)
         } else {
             refreshForecastForCurrentLocation()
