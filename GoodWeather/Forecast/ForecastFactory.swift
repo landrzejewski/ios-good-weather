@@ -21,9 +21,12 @@ final class ForecastFactory {
     private lazy var sqlForecastRepository: (ForecastQueries & ForecastUpdates)? = try? SqlForecastRepository()
     
     private lazy var getForecastService: GetForecastUseCase = GetForecastService(forecastProvider: urlSessionProviderAdapter, forecastRepository: sqlForecastRepository!)
+    
     private lazy var fakeLocationProvider: LocationProvider = FakeLocationProvider()
+    private lazy var coreLocationProvider: LocationProvider = CoreLocationProvider()
+    
     private lazy var forecastViewModelMapper: ForecastViewModelMapper = ForecastViewModelMapper()
 
-    lazy var forecastViewModel = ForecastViewModel(getForecastUseCase: getForecastService, locationProvider: fakeLocationProvider, mapper: forecastViewModelMapper)
+    lazy var forecastViewModel = ForecastViewModel(getForecastUseCase: getForecastService, locationProvider: coreLocationProvider, mapper: forecastViewModelMapper)
     
 }

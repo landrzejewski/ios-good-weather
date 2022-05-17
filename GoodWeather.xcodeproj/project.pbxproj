@@ -55,6 +55,7 @@
 		DF26CF6A28329DBF00B0F60B /* UI+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF6928329DBF00B0F60B /* UI+ext.swift */; };
 		DF61FD3A2833850E0018C770 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = DF61FD392833850E0018C770 /* SQLite */; };
 		DF61FD3C283385690018C770 /* SqlForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD3B283385690018C770 /* SqlForecastRepository.swift */; };
+		DF61FD3E283391E70018C770 /* CoreLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD3D283391E70018C770 /* CoreLocationProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,8 @@
 		DF26CF672832957E00B0F60B /* URLSessionForecastProviderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionForecastProviderError.swift; sourceTree = "<group>"; };
 		DF26CF6928329DBF00B0F60B /* UI+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+ext.swift"; sourceTree = "<group>"; };
 		DF61FD3B283385690018C770 /* SqlForecastRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlForecastRepository.swift; sourceTree = "<group>"; };
+		DF61FD3D283391E70018C770 /* CoreLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationProvider.swift; sourceTree = "<group>"; };
+		DF61FD43283397740018C770 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,7 @@
 				DF26CEE12832402D00B0F60B /* RouterView.swift */,
 				DF26CF5028327F3900B0F60B /* Route.swift */,
 				DF26CEE32832402E00B0F60B /* Assets.xcassets */,
+				DF61FD43283397740018C770 /* Info.plist */,
 				DF26CEE52832402E00B0F60B /* Preview Content */,
 			);
 			path = GoodWeather;
@@ -304,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				DF26CF292832535E00B0F60B /* FakeLocationProvider.swift */,
+				DF61FD3D283391E70018C770 /* CoreLocationProvider.swift */,
 			);
 			path = LocationProvider;
 			sourceTree = "<group>";
@@ -553,6 +558,7 @@
 				DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */,
 				DF26CF222832486E00B0F60B /* LocationProvider.swift in Sources */,
 				DF26CF5E283291CE00B0F60B /* DayForecastDto.swift in Sources */,
+				DF61FD3E283391E70018C770 /* CoreLocationProvider.swift in Sources */,
 				DF26CF1F283247F300B0F60B /* ForecastUpdates.swift in Sources */,
 				DF26CF5C283291A300B0F60B /* TemperatureDto.swift in Sources */,
 				DF26CF442832621400B0F60B /* Image+ext.swift in Sources */,
@@ -724,6 +730,7 @@
 				DEVELOPMENT_TEAM = 34A9J24W7Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoodWeather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -753,6 +760,7 @@
 				DEVELOPMENT_TEAM = 34A9J24W7Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoodWeather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

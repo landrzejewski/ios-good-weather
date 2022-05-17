@@ -20,6 +20,7 @@ final class SqlForecastRepository: ForecastQueries, ForecastUpdates {
     private let description = Expression<String>("description")
     private let city = Expression<String>("city")
    
+    // https://github.com/garriguv/SQLiteMigrationManager.swift
     init(dbName: String = "forecast.db") throws {
         let dbPath = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             .appendingPathComponent(dbName)
