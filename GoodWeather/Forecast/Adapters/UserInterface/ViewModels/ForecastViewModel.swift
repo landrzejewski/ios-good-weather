@@ -46,7 +46,9 @@ final class ForecastViewModel: ObservableObject {
     }
     
     func refreshForecast(for city: String) {
-        getForecastUseCase.getForecast(for: city, callback: onForecastRefreshed)
+        if !city.isEmpty {
+            getForecastUseCase.getForecast(for: city, callback: onForecastRefreshed)
+        }
     }
     
     func refreshForecastForCurrentLocation() {

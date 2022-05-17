@@ -59,6 +59,15 @@
 		DF61FD4A283399F30018C770 /* ForecastResolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD49283399F30018C770 /* ForecastResolver+ext.swift */; };
 		DF61FD4C2833A3360018C770 /* Capitalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD4B2833A3360018C770 /* Capitalized.swift */; };
 		DF61FD4E2833A4850018C770 /* UserProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD4D2833A4850018C770 /* UserProperty.swift */; };
+		DF61FDA02833C6B30018C770 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD9F2833C6B30018C770 /* CoreDataStack.swift */; };
+		DF61FDA32833CA800018C770 /* ForecastModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDA12833CA800018C770 /* ForecastModel.xcdatamodeld */; };
+		DF61FDB82833CC650018C770 /* CityEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDB42833CC650018C770 /* CityEntity+CoreDataClass.swift */; };
+		DF61FDB92833CC650018C770 /* CityEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDB52833CC650018C770 /* CityEntity+CoreDataProperties.swift */; };
+		DF61FDBA2833CC650018C770 /* DayForecastEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDB62833CC650018C770 /* DayForecastEntity+CoreDataClass.swift */; };
+		DF61FDBB2833CC650018C770 /* DayForecastEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDB72833CC650018C770 /* DayForecastEntity+CoreDataProperties.swift */; };
+		DF61FDBD2833CEE20018C770 /* CoreDataForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDBC2833CEE20018C770 /* CoreDataForecastRepository.swift */; };
+		DF61FDBF2833CF230018C770 /* CoreDataForecastRepositoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDBE2833CF230018C770 /* CoreDataForecastRepositoryAdapter.swift */; };
+		DF61FDC12833CF860018C770 /* CoreDataForecastRepositoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDC02833CF860018C770 /* CoreDataForecastRepositoryMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +142,15 @@
 		DF61FD49283399F30018C770 /* ForecastResolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForecastResolver+ext.swift"; sourceTree = "<group>"; };
 		DF61FD4B2833A3360018C770 /* Capitalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitalized.swift; sourceTree = "<group>"; };
 		DF61FD4D2833A4850018C770 /* UserProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProperty.swift; sourceTree = "<group>"; };
+		DF61FD9F2833C6B30018C770 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		DF61FDA22833CA800018C770 /* ForecastModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ForecastModel.xcdatamodel; sourceTree = "<group>"; };
+		DF61FDB42833CC650018C770 /* CityEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DF61FDB52833CC650018C770 /* CityEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DF61FDB62833CC650018C770 /* DayForecastEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayForecastEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DF61FDB72833CC650018C770 /* DayForecastEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayForecastEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DF61FDBC2833CEE20018C770 /* CoreDataForecastRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataForecastRepository.swift; sourceTree = "<group>"; };
+		DF61FDBE2833CF230018C770 /* CoreDataForecastRepositoryAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataForecastRepositoryAdapter.swift; sourceTree = "<group>"; };
+		DF61FDC02833CF860018C770 /* CoreDataForecastRepositoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataForecastRepositoryMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +340,7 @@
 		DF26CF2B2832540E00B0F60B /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				DF61FD9E2833C6A20018C770 /* CoreData */,
 				DF26CF2C2832543A00B0F60B /* FakeForecastRepository.swift */,
 				DF61FD3B283385690018C770 /* SqlForecastRepository.swift */,
 			);
@@ -364,6 +383,7 @@
 				DF26CF452832636400B0F60B /* UserInterface */,
 				DF61FD4B2833A3360018C770 /* Capitalized.swift */,
 				DF61FD4D2833A4850018C770 /* UserProperty.swift */,
+				DF61FD9F2833C6B30018C770 /* CoreDataStack.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -396,6 +416,21 @@
 				DF26CF672832957E00B0F60B /* URLSessionForecastProviderError.swift */,
 			);
 			path = OpenWeather;
+			sourceTree = "<group>";
+		};
+		DF61FD9E2833C6A20018C770 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DF61FDB42833CC650018C770 /* CityEntity+CoreDataClass.swift */,
+				DF61FDB52833CC650018C770 /* CityEntity+CoreDataProperties.swift */,
+				DF61FDB62833CC650018C770 /* DayForecastEntity+CoreDataClass.swift */,
+				DF61FDB72833CC650018C770 /* DayForecastEntity+CoreDataProperties.swift */,
+				DF61FDBC2833CEE20018C770 /* CoreDataForecastRepository.swift */,
+				DF61FDBE2833CF230018C770 /* CoreDataForecastRepositoryAdapter.swift */,
+				DF61FDC02833CF860018C770 /* CoreDataForecastRepositoryMapper.swift */,
+				DF61FDA12833CA800018C770 /* ForecastModel.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,15 +572,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF26CF2A2832535E00B0F60B /* FakeLocationProvider.swift in Sources */,
+				DF61FDA02833C6B30018C770 /* CoreDataStack.swift in Sources */,
 				DF26CEE22832402D00B0F60B /* RouterView.swift in Sources */,
+				DF61FDBF2833CF230018C770 /* CoreDataForecastRepositoryAdapter.swift in Sources */,
+				DF61FDB82833CC650018C770 /* CityEntity+CoreDataClass.swift in Sources */,
 				DF26CF66283293EF00B0F60B /* URLSessionForecastProviderMapper.swift in Sources */,
 				DF26CF53283283ED00B0F60B /* ForecastSettingsView.swift in Sources */,
+				DF61FDBD2833CEE20018C770 /* CoreDataForecastRepository.swift in Sources */,
+				DF61FDA32833CA800018C770 /* ForecastModel.xcdatamodeld in Sources */,
 				DF61FD4E2833A4850018C770 /* UserProperty.swift in Sources */,
 				DF26CF4B2832769100B0F60B /* ForecastViewModelMapper.swift in Sources */,
 				DF26CF5128327F3A00B0F60B /* Route.swift in Sources */,
 				DF26CF422832605600B0F60B /* Color+ext.swift in Sources */,
 				DF26CF602832928000B0F60B /* ForecastDto.swift in Sources */,
 				DF61FD482833996A0018C770 /* Resolver+ext.swift in Sources */,
+				DF61FDBB2833CC650018C770 /* DayForecastEntity+CoreDataProperties.swift in Sources */,
 				DF26CF5A2832916F00B0F60B /* ConditionsDto.swift in Sources */,
 				DF26CF4D28327A3B00B0F60B /* DayForecastView.swift in Sources */,
 				DF26CF472832644900B0F60B /* Text+ext.swift in Sources */,
@@ -563,6 +604,7 @@
 				DF26CF3B283258EC00B0F60B /* ForecastViewModel.swift in Sources */,
 				DF26CF622832931800B0F60B /* URLSessionForecastProvider.swift in Sources */,
 				DF26CF18283245DD00B0F60B /* ForecastProvider.swift in Sources */,
+				DF61FDBA2833CC650018C770 /* DayForecastEntity+CoreDataClass.swift in Sources */,
 				DF26CF642832935800B0F60B /* URLSessionForecastProviderAdapter.swift in Sources */,
 				DF26CF552832863A00B0F60B /* DefaultButtonStyle.swift in Sources */,
 				DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */,
@@ -571,6 +613,8 @@
 				DF61FD3E283391E70018C770 /* CoreLocationProvider.swift in Sources */,
 				DF26CF1F283247F300B0F60B /* ForecastUpdates.swift in Sources */,
 				DF26CF5C283291A300B0F60B /* TemperatureDto.swift in Sources */,
+				DF61FDC12833CF860018C770 /* CoreDataForecastRepositoryMapper.swift in Sources */,
+				DF61FDB92833CC650018C770 /* CityEntity+CoreDataProperties.swift in Sources */,
 				DF61FD4C2833A3360018C770 /* Capitalized.swift in Sources */,
 				DF61FD4A283399F30018C770 /* ForecastResolver+ext.swift in Sources */,
 				DF26CF442832621400B0F60B /* Image+ext.swift in Sources */,
@@ -939,6 +983,19 @@
 			productName = Resolver;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		DF61FDA12833CA800018C770 /* ForecastModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DF61FDA22833CA800018C770 /* ForecastModel.xcdatamodel */,
+			);
+			currentVersion = DF61FDA22833CA800018C770 /* ForecastModel.xcdatamodel */;
+			path = ForecastModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DF26CED42832402D00B0F60B /* Project object */;
 }

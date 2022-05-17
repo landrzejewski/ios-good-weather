@@ -22,8 +22,14 @@ extension Resolver {
         register { URLSessionForecastProviderMapper() }
         register { URLSessionForecastProvider(url: "https://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&units=metric&APPID=b933866e6489f58987b2898c89f542b8") }
         register { URLSessionForecastProviderAdapter() as ForecastProvider  }
-    
-        register { try? SqlForecastRepository() as ForecastQueries & ForecastUpdates }
+        
+        register { CoreDataStack(modelName: "ForecastModel") }
+        
+        register { CoreDataForecastRepository() }
+        
+        register { CoreDataForecastRepositoryMapper() }
+        
+        register { CoreDataForecastRepositoryAdapter() as ForecastQueries & ForecastUpdates }
         
         register { GetForecastService() }.implements(GetForecastUseCase.self)
         
