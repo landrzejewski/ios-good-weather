@@ -57,6 +57,8 @@
 		DF61FD46283399280018C770 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = DF61FD45283399280018C770 /* Resolver */; };
 		DF61FD482833996A0018C770 /* Resolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD472833996A0018C770 /* Resolver+ext.swift */; };
 		DF61FD4A283399F30018C770 /* ForecastResolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD49283399F30018C770 /* ForecastResolver+ext.swift */; };
+		DF61FD4C2833A3360018C770 /* Capitalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD4B2833A3360018C770 /* Capitalized.swift */; };
+		DF61FD4E2833A4850018C770 /* UserProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD4D2833A4850018C770 /* UserProperty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		DF61FD43283397740018C770 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DF61FD472833996A0018C770 /* Resolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+ext.swift"; sourceTree = "<group>"; };
 		DF61FD49283399F30018C770 /* ForecastResolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForecastResolver+ext.swift"; sourceTree = "<group>"; };
+		DF61FD4B2833A3360018C770 /* Capitalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitalized.swift; sourceTree = "<group>"; };
+		DF61FD4D2833A4850018C770 /* UserProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProperty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +362,8 @@
 			isa = PBXGroup;
 			children = (
 				DF26CF452832636400B0F60B /* UserInterface */,
+				DF61FD4B2833A3360018C770 /* Capitalized.swift */,
+				DF61FD4D2833A4850018C770 /* UserProperty.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -534,6 +540,7 @@
 				DF26CEE22832402D00B0F60B /* RouterView.swift in Sources */,
 				DF26CF66283293EF00B0F60B /* URLSessionForecastProviderMapper.swift in Sources */,
 				DF26CF53283283ED00B0F60B /* ForecastSettingsView.swift in Sources */,
+				DF61FD4E2833A4850018C770 /* UserProperty.swift in Sources */,
 				DF26CF4B2832769100B0F60B /* ForecastViewModelMapper.swift in Sources */,
 				DF26CF5128327F3A00B0F60B /* Route.swift in Sources */,
 				DF26CF422832605600B0F60B /* Color+ext.swift in Sources */,
@@ -564,6 +571,7 @@
 				DF61FD3E283391E70018C770 /* CoreLocationProvider.swift in Sources */,
 				DF26CF1F283247F300B0F60B /* ForecastUpdates.swift in Sources */,
 				DF26CF5C283291A300B0F60B /* TemperatureDto.swift in Sources */,
+				DF61FD4C2833A3360018C770 /* Capitalized.swift in Sources */,
 				DF61FD4A283399F30018C770 /* ForecastResolver+ext.swift in Sources */,
 				DF26CF442832621400B0F60B /* Image+ext.swift in Sources */,
 				DF61FD3C283385690018C770 /* SqlForecastRepository.swift in Sources */,

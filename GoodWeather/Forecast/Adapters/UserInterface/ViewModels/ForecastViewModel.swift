@@ -27,6 +27,8 @@ final class ForecastViewModel: ObservableObject {
     @Injected
     private var mapper: ForecastViewModelMapper
     private var cancellable = Set<AnyCancellable>()
+    @UserProperty(key: "cityName", defaultValue: "warsaw")
+    private var cachedCityName: String
     
     init() {
         locationProvider.location.sink { location in
@@ -36,7 +38,7 @@ final class ForecastViewModel: ObservableObject {
     }
     
     func refreshForecast() {
-        if let cityName = UserDefaults.standard.string(forKey: "cityName"), !cityName.isEmpty {
+        if !cachedCityName.isEmpty {
             refreshForecast(for: cityName)
         } else {
             refreshForecastForCurrentLocation()
