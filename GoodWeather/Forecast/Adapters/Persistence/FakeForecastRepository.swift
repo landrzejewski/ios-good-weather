@@ -16,7 +16,7 @@ final class FakeForecastReposiory: ForecastQueries, ForecastUpdates {
     }
     
     func getAll(for city: String, callback: @escaping ([DayForecast]) -> ()) {
-        callback(Array(data.values).sorted(by: { $0.date.compare($1.date) == .orderedAscending }))
+        callback(Array(data.values).sorted { $0.date < $1.date })
     }
     
     func save(forecast: [DayForecast], for city: String) throws {
