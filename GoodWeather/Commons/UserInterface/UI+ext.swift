@@ -7,7 +7,7 @@
 
 import Foundation
 
-func onMain(closure: @escaping () -> ()) {
+func onMainThread(closure: @escaping () -> ()) {
     if Thread.isMainThread {
         closure()
     } else {

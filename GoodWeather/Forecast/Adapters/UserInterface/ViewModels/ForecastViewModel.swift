@@ -51,7 +51,7 @@ final class ForecastViewModel: ObservableObject {
     }
  
     private func onForecastRefreshed(_ result: Result<Forecast, GetForecastError>) {
-        onMain { [self] in
+        onMainThread { [self] in
             switch result {
             case .success(let forecast):
                 errors = false
