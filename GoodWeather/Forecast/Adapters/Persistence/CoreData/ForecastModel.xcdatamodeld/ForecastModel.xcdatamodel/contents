@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CityEntity" representedClassName="CityEntity" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="cityId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
         <relationship name="forecast" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DayForecastEntity"/>
     </entity>
     <entity name="DayForecastEntity" representedClassName="DayForecastEntity" syncable="YES">
         <attribute name="conditions" attributeType="String"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="forecastId" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="imageName" attributeType="String"/>
         <attribute name="pressure" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="temperature" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <elements>
         <element name="CityEntity" positionX="-45" positionY="0" width="128" height="74"/>
-        <element name="DayForecastEntity" positionX="-18" positionY="45" width="128" height="104"/>
+        <element name="DayForecastEntity" positionX="-18" positionY="45" width="128" height="119"/>
     </elements>
 </model>

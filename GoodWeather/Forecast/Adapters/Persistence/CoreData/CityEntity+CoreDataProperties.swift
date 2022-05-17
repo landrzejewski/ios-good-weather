@@ -16,8 +16,8 @@ extension CityEntity {
         return NSFetchRequest<CityEntity>(entityName: "CityEntity")
     }
 
+    @NSManaged public var cityId: UUID?
     @NSManaged public var name: String?
-    @NSManaged public var id: UUID?
     @NSManaged public var forecast: NSSet?
 
 }
