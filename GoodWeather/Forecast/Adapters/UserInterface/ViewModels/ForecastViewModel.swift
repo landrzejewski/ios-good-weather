@@ -21,20 +21,21 @@ final class ForecastViewModel: ObservableObject {
     var errors = false
     
     @Injected
-    private var getForecastUseCase: GetForecastUseCase
+    var getForecastUseCase: GetForecastUseCase
     @Injected
-    private var locationProvider: LocationProvider
+    var locationProvider: LocationProvider
     @Injected
-    private var mapper: ForecastViewModelMapper
+    var mapper: ForecastViewModelMapper
     private var cancellable = Set<AnyCancellable>()
     @UserProperty(key: "cityName", defaultValue: "warsaw")
-    private var cachedCityName: String
+    var cachedCityName: String
     
     init() {
         locationProvider.location.sink { location in
             self.getForecastUseCase.getForecast(for: location, callback: self.onForecastRefreshed)
         }
         .store(in: &cancellable)
+        cityName = cachedCityName
     }
     
     func refreshForecast() {

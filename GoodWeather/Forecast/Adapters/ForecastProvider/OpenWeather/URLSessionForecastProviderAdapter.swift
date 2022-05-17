@@ -11,9 +11,9 @@ import Resolver
 final class URLSessionForecastProviderAdapter: ForecastProvider {
     
     @Injected
-    private var provider: URLSessionForecastProvider
+    var provider: URLSessionForecastProvider
     @Injected
-    private var mapper: URLSessionForecastProviderMapper
+    var mapper: URLSessionForecastProviderMapper
    
     func getForecast(for city: String, callback: @escaping (Result<Forecast, ForecastProviderError>) -> ()) {
         provider.getForecast(for: city) { result in
