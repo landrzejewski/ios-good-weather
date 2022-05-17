@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Resolver
 
 final class ForecastViewModel: ObservableObject {
     
@@ -19,15 +20,15 @@ final class ForecastViewModel: ObservableObject {
     @Published
     var errors = false
     
+    @Injected
     private var getForecastUseCase: GetForecastUseCase
+    @Injected
     private var locationProvider: LocationProvider
+    @Injected
     private var mapper: ForecastViewModelMapper
     private var cancellable = Set<AnyCancellable>()
     
-    init(getForecastUseCase: GetForecastUseCase, locationProvider: LocationProvider, mapper: ForecastViewModelMapper) {
-        self.getForecastUseCase = getForecastUseCase
-        self.locationProvider = locationProvider
-        self.mapper = mapper
+    init() {
         locationProvider.location.sink { location in
             self.getForecastUseCase.getForecast(for: location, callback: self.onForecastRefreshed)
         }

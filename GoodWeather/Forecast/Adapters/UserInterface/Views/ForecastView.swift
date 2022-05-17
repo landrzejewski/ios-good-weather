@@ -77,8 +77,8 @@ struct ForecastView: View {
      }
 }
 
-struct ForecastView_Previews: PreviewProvider {
-    static var previews: some View {
-        ForecastView(viewModel: ApplicationFactory.shared.forecast.forecastViewModel)
-    }
-}
+//struct ForecastView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ForecastView(viewModel:ApplicationFactory.shared.forecast.forecastViewModel)
+//    }
+//}

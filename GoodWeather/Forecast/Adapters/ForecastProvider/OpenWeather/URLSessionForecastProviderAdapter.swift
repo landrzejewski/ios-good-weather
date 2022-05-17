@@ -6,16 +6,14 @@
 //
 
 import Foundation
+import Resolver
 
 final class URLSessionForecastProviderAdapter: ForecastProvider {
     
-    private let provider: URLSessionForecastProvider
-    private let mapper: URLSessionForecastProviderMapper
-    
-    init(provider: URLSessionForecastProvider, mapper: URLSessionForecastProviderMapper) {
-        self.provider = provider
-        self.mapper = mapper
-    }
+    @Injected
+    private var provider: URLSessionForecastProvider
+    @Injected
+    private var mapper: URLSessionForecastProviderMapper
    
     func getForecast(for city: String, callback: @escaping (Result<Forecast, ForecastProviderError>) -> ()) {
         provider.getForecast(for: city) { result in

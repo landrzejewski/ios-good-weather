@@ -6,17 +6,15 @@
 //
 
 import Foundation
+import Resolver
 
 final class GetForecastService: GetForecastUseCase {
 
-    private let forecastProvider: ForecastProvider
-    private let forecastRepository: ForecastQueries & ForecastUpdates
-    
-    init(forecastProvider: ForecastProvider, forecastRepository: ForecastQueries & ForecastUpdates) {
-        self.forecastProvider = forecastProvider
-        self.forecastRepository = forecastRepository
-    }
-    
+    @Injected//(name: .fake)
+    private var forecastProvider: ForecastProvider
+    @Injected
+    private var forecastRepository: ForecastQueries & ForecastUpdates
+
     func getForecast(for city: String, callback: @escaping (Result<Forecast, GetForecastError>) -> ()) {
         forecastRepository.getAll(for: city) { cachedForecast in
             if !cachedForecast.isEmpty {

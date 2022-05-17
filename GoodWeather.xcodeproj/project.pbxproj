@@ -32,14 +32,12 @@
 		DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF382832584A00B0F60B /* ForecastDetailsView.swift */; };
 		DF26CF3B283258EC00B0F60B /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF3A283258EC00B0F60B /* ForecastViewModel.swift */; };
 		DF26CF3D2832594B00B0F60B /* DayForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF3C2832594B00B0F60B /* DayForecastViewModel.swift */; };
-		DF26CF3F28325B4700B0F60B /* ApplicationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF3E28325B4700B0F60B /* ApplicationFactory.swift */; };
 		DF26CF422832605600B0F60B /* Color+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF412832605600B0F60B /* Color+ext.swift */; };
 		DF26CF442832621400B0F60B /* Image+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF432832621400B0F60B /* Image+ext.swift */; };
 		DF26CF472832644900B0F60B /* Text+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF462832644900B0F60B /* Text+ext.swift */; };
 		DF26CF492832651A00B0F60B /* View+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF482832651A00B0F60B /* View+ext.swift */; };
 		DF26CF4B2832769100B0F60B /* ForecastViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF4A2832769100B0F60B /* ForecastViewModelMapper.swift */; };
 		DF26CF4D28327A3B00B0F60B /* DayForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF4C28327A3B00B0F60B /* DayForecastView.swift */; };
-		DF26CF4F28327E2D00B0F60B /* ForecastFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF4E28327E2D00B0F60B /* ForecastFactory.swift */; };
 		DF26CF5128327F3A00B0F60B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF5028327F3900B0F60B /* Route.swift */; };
 		DF26CF53283283ED00B0F60B /* ForecastSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF52283283ED00B0F60B /* ForecastSettingsView.swift */; };
 		DF26CF552832863A00B0F60B /* DefaultButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF542832863A00B0F60B /* DefaultButtonStyle.swift */; };
@@ -56,6 +54,9 @@
 		DF61FD3A2833850E0018C770 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = DF61FD392833850E0018C770 /* SQLite */; };
 		DF61FD3C283385690018C770 /* SqlForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD3B283385690018C770 /* SqlForecastRepository.swift */; };
 		DF61FD3E283391E70018C770 /* CoreLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD3D283391E70018C770 /* CoreLocationProvider.swift */; };
+		DF61FD46283399280018C770 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = DF61FD45283399280018C770 /* Resolver */; };
+		DF61FD482833996A0018C770 /* Resolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD472833996A0018C770 /* Resolver+ext.swift */; };
+		DF61FD4A283399F30018C770 /* ForecastResolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD49283399F30018C770 /* ForecastResolver+ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,14 +105,12 @@
 		DF26CF382832584A00B0F60B /* ForecastDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetailsView.swift; sourceTree = "<group>"; };
 		DF26CF3A283258EC00B0F60B /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 		DF26CF3C2832594B00B0F60B /* DayForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecastViewModel.swift; sourceTree = "<group>"; };
-		DF26CF3E28325B4700B0F60B /* ApplicationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFactory.swift; sourceTree = "<group>"; };
 		DF26CF412832605600B0F60B /* Color+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+ext.swift"; sourceTree = "<group>"; };
 		DF26CF432832621400B0F60B /* Image+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ext.swift"; sourceTree = "<group>"; };
 		DF26CF462832644900B0F60B /* Text+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+ext.swift"; sourceTree = "<group>"; };
 		DF26CF482832651A00B0F60B /* View+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ext.swift"; sourceTree = "<group>"; };
 		DF26CF4A2832769100B0F60B /* ForecastViewModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewModelMapper.swift; sourceTree = "<group>"; };
 		DF26CF4C28327A3B00B0F60B /* DayForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecastView.swift; sourceTree = "<group>"; };
-		DF26CF4E28327E2D00B0F60B /* ForecastFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastFactory.swift; sourceTree = "<group>"; };
 		DF26CF5028327F3900B0F60B /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		DF26CF52283283ED00B0F60B /* ForecastSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSettingsView.swift; sourceTree = "<group>"; };
 		DF26CF542832863A00B0F60B /* DefaultButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButtonStyle.swift; sourceTree = "<group>"; };
@@ -128,6 +127,8 @@
 		DF61FD3B283385690018C770 /* SqlForecastRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlForecastRepository.swift; sourceTree = "<group>"; };
 		DF61FD3D283391E70018C770 /* CoreLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationProvider.swift; sourceTree = "<group>"; };
 		DF61FD43283397740018C770 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DF61FD472833996A0018C770 /* Resolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+ext.swift"; sourceTree = "<group>"; };
+		DF61FD49283399F30018C770 /* ForecastResolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForecastResolver+ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF61FD46283399280018C770 /* Resolver in Frameworks */,
 				DF61FD3A2833850E0018C770 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,10 +183,10 @@
 			children = (
 				DF26CF402832604800B0F60B /* Commons */,
 				DF26CF09283240C800B0F60B /* Forecast */,
-				DF26CF3E28325B4700B0F60B /* ApplicationFactory.swift */,
 				DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */,
 				DF26CEE12832402D00B0F60B /* RouterView.swift */,
 				DF26CF5028327F3900B0F60B /* Route.swift */,
+				DF61FD472833996A0018C770 /* Resolver+ext.swift */,
 				DF26CEE32832402E00B0F60B /* Assets.xcassets */,
 				DF61FD43283397740018C770 /* Info.plist */,
 				DF26CEE52832402E00B0F60B /* Preview Content */,
@@ -223,7 +225,7 @@
 				DF26CF0C2832416600B0F60B /* Adapters */,
 				DF26CF0A2832410F00B0F60B /* Ports */,
 				DF26CF0B2832413900B0F60B /* Domain */,
-				DF26CF4E28327E2D00B0F60B /* ForecastFactory.swift */,
+				DF61FD49283399F30018C770 /* ForecastResolver+ext.swift */,
 			);
 			path = Forecast;
 			sourceTree = "<group>";
@@ -408,6 +410,7 @@
 			name = GoodWeather;
 			packageProductDependencies = (
 				DF61FD392833850E0018C770 /* SQLite */,
+				DF61FD45283399280018C770 /* Resolver */,
 			);
 			productName = GoodWeather;
 			productReference = DF26CEDC2832402D00B0F60B /* GoodWeather.app */;
@@ -483,6 +486,7 @@
 			mainGroup = DF26CED32832402D00B0F60B;
 			packageReferences = (
 				DF61FD382833850E0018C770 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+				DF61FD44283399280018C770 /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = DF26CEDD2832402D00B0F60B /* Products */;
 			projectDirPath = "";
@@ -534,6 +538,7 @@
 				DF26CF5128327F3A00B0F60B /* Route.swift in Sources */,
 				DF26CF422832605600B0F60B /* Color+ext.swift in Sources */,
 				DF26CF602832928000B0F60B /* ForecastDto.swift in Sources */,
+				DF61FD482833996A0018C770 /* Resolver+ext.swift in Sources */,
 				DF26CF5A2832916F00B0F60B /* ConditionsDto.swift in Sources */,
 				DF26CF4D28327A3B00B0F60B /* DayForecastView.swift in Sources */,
 				DF26CF472832644900B0F60B /* Text+ext.swift in Sources */,
@@ -552,15 +557,14 @@
 				DF26CF622832931800B0F60B /* URLSessionForecastProvider.swift in Sources */,
 				DF26CF18283245DD00B0F60B /* ForecastProvider.swift in Sources */,
 				DF26CF642832935800B0F60B /* URLSessionForecastProviderAdapter.swift in Sources */,
-				DF26CF3F28325B4700B0F60B /* ApplicationFactory.swift in Sources */,
 				DF26CF552832863A00B0F60B /* DefaultButtonStyle.swift in Sources */,
-				DF26CF4F28327E2D00B0F60B /* ForecastFactory.swift in Sources */,
 				DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */,
 				DF26CF222832486E00B0F60B /* LocationProvider.swift in Sources */,
 				DF26CF5E283291CE00B0F60B /* DayForecastDto.swift in Sources */,
 				DF61FD3E283391E70018C770 /* CoreLocationProvider.swift in Sources */,
 				DF26CF1F283247F300B0F60B /* ForecastUpdates.swift in Sources */,
 				DF26CF5C283291A300B0F60B /* TemperatureDto.swift in Sources */,
+				DF61FD4A283399F30018C770 /* ForecastResolver+ext.swift in Sources */,
 				DF26CF442832621400B0F60B /* Image+ext.swift in Sources */,
 				DF61FD3C283385690018C770 /* SqlForecastRepository.swift in Sources */,
 				DF26CF132832445A00B0F60B /* DayForecast.swift in Sources */,
@@ -905,6 +909,14 @@
 				minimumVersion = 0.9.2;
 			};
 		};
+		DF61FD44283399280018C770 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -912,6 +924,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DF61FD382833850E0018C770 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
 			productName = SQLite;
+		};
+		DF61FD45283399280018C770 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF61FD44283399280018C770 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
