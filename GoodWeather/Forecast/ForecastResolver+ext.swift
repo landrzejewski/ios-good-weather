@@ -11,6 +11,7 @@ import Resolver
 extension Resolver.Name {
     
     static let fake = Self("fake")
+    static let proxy = Self("proxy")
     
 }
 
@@ -22,6 +23,8 @@ extension Resolver {
         register { URLSessionForecastProviderMapper() }
         register { URLSessionForecastProvider(url: "https://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&units=metric&APPID=b933866e6489f58987b2898c89f542b8") }
         register { URLSessionForecastProviderAdapter() as ForecastProvider  }
+        
+        register(name: .proxy) { ForecastProviderLoggerProxy() as ForecastProvider }
         
         register { CoreDataStack(modelName: "ForecastModel") }
         

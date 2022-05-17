@@ -12,7 +12,7 @@ import CoreData
 final class CoreDataForecastRepository {
     
     @Injected
-    private var stack: CoreDataStack
+    var stack: CoreDataStack
     private var forecastAsyncRequest: NSAsynchronousFetchRequest<DayForecastEntity>?
     private var cityAsyncRequest: NSAsynchronousFetchRequest<CityEntity>?
     
@@ -39,7 +39,7 @@ final class CoreDataForecastRepository {
             }
             callback(forecast)
         }
-        _ = try? stack.context.execute(forecastAsyncRequest!)
+        _ = try? stack.context.execute(cityAsyncRequest!)
     }
     
     func save(city: CityEntity) throws {

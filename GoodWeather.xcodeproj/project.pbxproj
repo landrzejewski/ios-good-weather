@@ -68,6 +68,10 @@
 		DF61FDD92833DA710018C770 /* CityEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDD52833DA710018C770 /* CityEntity+CoreDataProperties.swift */; };
 		DF61FDDA2833DA710018C770 /* DayForecastEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDD62833DA710018C770 /* DayForecastEntity+CoreDataClass.swift */; };
 		DF61FDDB2833DA710018C770 /* DayForecastEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDD72833DA710018C770 /* DayForecastEntity+CoreDataProperties.swift */; };
+		DF61FDDD2833E2C90018C770 /* ForecastProviderLoggerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDDC2833E2C90018C770 /* ForecastProviderLoggerProxy.swift */; };
+		DF61FDE02833E4360018C770 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDDF2833E4360018C770 /* Logger.swift */; };
+		DF61FDE22833E4560018C770 /* LoggingLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDE12833E4560018C770 /* LoggingLevel.swift */; };
+		DF61FDE42833E55A0018C770 /* ConsoleLoggger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDE32833E55A0018C770 /* ConsoleLoggger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +155,10 @@
 		DF61FDD52833DA710018C770 /* CityEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DF61FDD62833DA710018C770 /* DayForecastEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayForecastEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DF61FDD72833DA710018C770 /* DayForecastEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayForecastEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DF61FDDC2833E2C90018C770 /* ForecastProviderLoggerProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastProviderLoggerProxy.swift; sourceTree = "<group>"; };
+		DF61FDDF2833E4360018C770 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		DF61FDE12833E4560018C770 /* LoggingLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingLevel.swift; sourceTree = "<group>"; };
+		DF61FDE32833E55A0018C770 /* ConsoleLoggger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleLoggger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +332,7 @@
 			children = (
 				DF26CF56283290AD00B0F60B /* OpenWeather */,
 				DF26CF262832521100B0F60B /* FakeForecastProvider.swift */,
+				DF61FDDC2833E2C90018C770 /* ForecastProviderLoggerProxy.swift */,
 			);
 			path = ForecastProvider;
 			sourceTree = "<group>";
@@ -380,6 +389,7 @@
 		DF26CF402832604800B0F60B /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				DF61FDDE2833E4250018C770 /* Logging */,
 				DF26CF452832636400B0F60B /* UserInterface */,
 				DF61FD4B2833A3360018C770 /* Capitalized.swift */,
 				DF61FD4D2833A4850018C770 /* UserProperty.swift */,
@@ -431,6 +441,16 @@
 				DF61FDA12833CA800018C770 /* ForecastModel.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		DF61FDDE2833E4250018C770 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				DF61FDDF2833E4360018C770 /* Logger.swift */,
+				DF61FDE12833E4560018C770 /* LoggingLevel.swift */,
+				DF61FDE32833E55A0018C770 /* ConsoleLoggger.swift */,
+			);
+			path = Logging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -575,7 +595,9 @@
 				DF61FDA02833C6B30018C770 /* CoreDataStack.swift in Sources */,
 				DF26CEE22832402D00B0F60B /* RouterView.swift in Sources */,
 				DF61FDBF2833CF230018C770 /* CoreDataForecastRepositoryAdapter.swift in Sources */,
+				DF61FDDD2833E2C90018C770 /* ForecastProviderLoggerProxy.swift in Sources */,
 				DF26CF66283293EF00B0F60B /* URLSessionForecastProviderMapper.swift in Sources */,
+				DF61FDE22833E4560018C770 /* LoggingLevel.swift in Sources */,
 				DF26CF53283283ED00B0F60B /* ForecastSettingsView.swift in Sources */,
 				DF61FDBD2833CEE20018C770 /* CoreDataForecastRepository.swift in Sources */,
 				DF61FDA32833CA800018C770 /* ForecastModel.xcdatamodeld in Sources */,
@@ -609,6 +631,8 @@
 				DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */,
 				DF26CF222832486E00B0F60B /* LocationProvider.swift in Sources */,
 				DF26CF5E283291CE00B0F60B /* DayForecastDto.swift in Sources */,
+				DF61FDE02833E4360018C770 /* Logger.swift in Sources */,
+				DF61FDE42833E55A0018C770 /* ConsoleLoggger.swift in Sources */,
 				DF61FD3E283391E70018C770 /* CoreLocationProvider.swift in Sources */,
 				DF26CF1F283247F300B0F60B /* ForecastUpdates.swift in Sources */,
 				DF61FDDA2833DA710018C770 /* DayForecastEntity+CoreDataClass.swift in Sources */,

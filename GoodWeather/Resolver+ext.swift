@@ -10,7 +10,12 @@ import Resolver
 
 extension Resolver: ResolverRegistering {
     
+    static func registerGlobalComponents() {
+        register { ConsoleLogger() as Logger }
+    }
+    
     static public func registerAllServices() {
+        registerGlobalComponents()
         registerForecastComponents()
     }
     

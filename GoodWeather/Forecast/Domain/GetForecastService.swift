@@ -10,7 +10,7 @@ import Resolver
 
 final class GetForecastService: GetForecastUseCase {
 
-    @Injected//(name: .fake)
+    @Injected(name: .proxy)
     private var forecastProvider: ForecastProvider
     @Injected
     private var forecastRepository: ForecastQueries & ForecastUpdates
