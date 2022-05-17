@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import Resolver
 
 final class CoreDataForecastRepository {
+    
+    @Injected
+    private var stack: CoreDataStack
     
 }
