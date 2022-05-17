@@ -21,11 +21,11 @@ final class ForecastViewModel: ObservableObject {
     var errors = false
     
     @Injected
-    private var getForecastUseCase: GetForecastUseCase
+    var getForecastUseCase: GetForecastUseCase
     @Injected
-    private var locationProvider: LocationProvider
+    var locationProvider: LocationProvider
     @Injected
-    private var mapper: ForecastViewModelMapper
+    var mapper: ForecastViewModelMapper
     private var cancellable = Set<AnyCancellable>()
     
     init() {
