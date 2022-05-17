@@ -53,6 +53,8 @@
 		DF26CF66283293EF00B0F60B /* URLSessionForecastProviderMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF65283293EF00B0F60B /* URLSessionForecastProviderMapper.swift */; };
 		DF26CF682832957E00B0F60B /* URLSessionForecastProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF672832957E00B0F60B /* URLSessionForecastProviderError.swift */; };
 		DF26CF6A28329DBF00B0F60B /* UI+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF6928329DBF00B0F60B /* UI+ext.swift */; };
+		DF61FD3A2833850E0018C770 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = DF61FD392833850E0018C770 /* SQLite */; };
+		DF61FD3C283385690018C770 /* SqlForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD3B283385690018C770 /* SqlForecastRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,7 @@
 		DF26CF65283293EF00B0F60B /* URLSessionForecastProviderMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionForecastProviderMapper.swift; sourceTree = "<group>"; };
 		DF26CF672832957E00B0F60B /* URLSessionForecastProviderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionForecastProviderError.swift; sourceTree = "<group>"; };
 		DF26CF6928329DBF00B0F60B /* UI+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+ext.swift"; sourceTree = "<group>"; };
+		DF61FD3B283385690018C770 /* SqlForecastRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlForecastRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF61FD3A2833850E0018C770 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				DF26CF2C2832543A00B0F60B /* FakeForecastRepository.swift */,
+				DF61FD3B283385690018C770 /* SqlForecastRepository.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -396,6 +401,9 @@
 			dependencies = (
 			);
 			name = GoodWeather;
+			packageProductDependencies = (
+				DF61FD392833850E0018C770 /* SQLite */,
+			);
 			productName = GoodWeather;
 			productReference = DF26CEDC2832402D00B0F60B /* GoodWeather.app */;
 			productType = "com.apple.product-type.application";
@@ -468,6 +476,9 @@
 				Base,
 			);
 			mainGroup = DF26CED32832402D00B0F60B;
+			packageReferences = (
+				DF61FD382833850E0018C770 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = DF26CEDD2832402D00B0F60B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -545,6 +556,7 @@
 				DF26CF1F283247F300B0F60B /* ForecastUpdates.swift in Sources */,
 				DF26CF5C283291A300B0F60B /* TemperatureDto.swift in Sources */,
 				DF26CF442832621400B0F60B /* Image+ext.swift in Sources */,
+				DF61FD3C283385690018C770 /* SqlForecastRepository.swift in Sources */,
 				DF26CF132832445A00B0F60B /* DayForecast.swift in Sources */,
 				DF26CF15283244C400B0F60B /* Forecast.swift in Sources */,
 				DF26CF1D2832472D00B0F60B /* ForecastQueries.swift in Sources */,
@@ -875,6 +887,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF61FD382833850E0018C770 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF61FD392833850E0018C770 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF61FD382833850E0018C770 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DF26CED42832402D00B0F60B /* Project object */;
 }
