@@ -17,6 +17,7 @@ extension Resolver: ResolverRegistering {
     static public func registerAllServices() {
         registerGlobalComponents()
         registerForecastComponents()
+        registerRestaurantComponents()
         registerProfileComponents()
     }
     

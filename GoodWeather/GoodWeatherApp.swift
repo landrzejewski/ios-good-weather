@@ -17,6 +17,9 @@ struct GoodWeatherApp: App {
         UITabBar.appearance().isTranslucent = false
     }
     
+    
+    @Injected
+    private var foodListViewModel: FoodListViewModel
     @Injected
     private var profileViewModel: ProfileViewModel
     
@@ -29,7 +32,11 @@ struct GoodWeatherApp: App {
                         Image(systemName: "sun.max.fill")
                         Text("Forecast")
                     }
-                    .accentColor(.orange)
+                FoodListView(viewModel: foodListViewModel)
+                    .tabItem {
+                        Image(systemName: "list.dash")
+                        Text("Menu")
+                    }
                 ProfileView(viewModel: profileViewModel)
                     .tabItem {
                         Image(systemName: "person")
