@@ -11,6 +11,7 @@ import Resolver
 extension Resolver {
     
     static func registerProfileComponents() {
+        register { FakeProfileEventBus() as ProfileEventBus }
         register { ProfileViewModel() }
     }
     

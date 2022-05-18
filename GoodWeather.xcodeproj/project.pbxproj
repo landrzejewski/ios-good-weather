@@ -12,6 +12,10 @@
 		B20439432834EAF200429E20 /* ProfileResolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20439422834EAF200429E20 /* ProfileResolver+ext.swift */; };
 		B20439482834EB9E00429E20 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20439472834EB9E00429E20 /* ProfileViewModel.swift */; };
 		B204394A2834EBD600429E20 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20439492834EBD600429E20 /* ProfileView.swift */; };
+		B204394C2834F54F00429E20 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204394B2834F54F00429E20 /* Profile.swift */; };
+		B204394E2834F5AC00429E20 /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204394D2834F5AC00429E20 /* UserCard.swift */; };
+		B20439502834F64F00429E20 /* ProfileEventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204394F2834F64F00429E20 /* ProfileEventBus.swift */; };
+		B20439522834F6AB00429E20 /* FakeProfileEventBus .swift in Sources */ = {isa = PBXBuildFile; fileRef = B20439512834F6AB00429E20 /* FakeProfileEventBus .swift */; };
 		DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */; };
 		DF26CEE22832402D00B0F60B /* ForecastRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */; };
 		DF26CEE42832402E00B0F60B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF26CEE32832402E00B0F60B /* Assets.xcassets */; };
@@ -100,6 +104,10 @@
 		B20439422834EAF200429E20 /* ProfileResolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileResolver+ext.swift"; sourceTree = "<group>"; };
 		B20439472834EB9E00429E20 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		B20439492834EBD600429E20 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B204394B2834F54F00429E20 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		B204394D2834F5AC00429E20 /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
+		B204394F2834F64F00429E20 /* ProfileEventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEventBus.swift; sourceTree = "<group>"; };
+		B20439512834F6AB00429E20 /* FakeProfileEventBus .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FakeProfileEventBus .swift"; sourceTree = "<group>"; };
 		DF26CEDC2832402D00B0F60B /* GoodWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWeatherApp.swift; sourceTree = "<group>"; };
 		DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRouterView.swift; sourceTree = "<group>"; };
@@ -218,6 +226,7 @@
 		B20439402834EAC000429E20 /* Ports */ = {
 			isa = PBXGroup;
 			children = (
+				B204394F2834F64F00429E20 /* ProfileEventBus.swift */,
 			);
 			path = Ports;
 			sourceTree = "<group>";
@@ -225,6 +234,9 @@
 		B20439412834EACA00429E20 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				B204394B2834F54F00429E20 /* Profile.swift */,
+				B204394D2834F5AC00429E20 /* UserCard.swift */,
+				B20439512834F6AB00429E20 /* FakeProfileEventBus .swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -665,6 +677,7 @@
 				DF61FDA02833C6B30018C770 /* CoreDataStack.swift in Sources */,
 				DF26CEE22832402D00B0F60B /* ForecastRouterView.swift in Sources */,
 				DF61FDBF2833CF230018C770 /* CoreDataForecastRepositoryAdapter.swift in Sources */,
+				B204394C2834F54F00429E20 /* Profile.swift in Sources */,
 				DF61FDDD2833E2C90018C770 /* ForecastProviderLoggerProxy.swift in Sources */,
 				DF26CF66283293EF00B0F60B /* URLSessionForecastProviderMapper.swift in Sources */,
 				DF61FDE22833E4560018C770 /* LoggingLevel.swift in Sources */,
@@ -672,6 +685,7 @@
 				DF61FDBD2833CEE20018C770 /* CoreDataForecastRepository.swift in Sources */,
 				DF61FDA32833CA800018C770 /* ForecastModel.xcdatamodeld in Sources */,
 				DF61FD4E2833A4850018C770 /* UserProperty.swift in Sources */,
+				B20439502834F64F00429E20 /* ProfileEventBus.swift in Sources */,
 				DF26CF4B2832769100B0F60B /* ForecastViewModelMapper.swift in Sources */,
 				DF26CF5128327F3A00B0F60B /* ForecastRoute.swift in Sources */,
 				DF26CF422832605600B0F60B /* Color+ext.swift in Sources */,
@@ -700,6 +714,7 @@
 				B20439432834EAF200429E20 /* ProfileResolver+ext.swift in Sources */,
 				DF26CF642832935800B0F60B /* URLSessionForecastProviderAdapter.swift in Sources */,
 				DF26CF552832863A00B0F60B /* DefaultButtonStyle.swift in Sources */,
+				B204394E2834F5AC00429E20 /* UserCard.swift in Sources */,
 				DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */,
 				DF26CF222832486E00B0F60B /* LocationProvider.swift in Sources */,
 				DF26CF5E283291CE00B0F60B /* DayForecastDto.swift in Sources */,
@@ -715,6 +730,7 @@
 				DF26CF442832621400B0F60B /* Image+ext.swift in Sources */,
 				DF61FDDB2833DA710018C770 /* DayForecastEntity+CoreDataProperties.swift in Sources */,
 				DF61FD3C283385690018C770 /* SqlForecastRepository.swift in Sources */,
+				B20439522834F6AB00429E20 /* FakeProfileEventBus .swift in Sources */,
 				DF26CF132832445A00B0F60B /* DayForecast.swift in Sources */,
 				B20439482834EB9E00429E20 /* ProfileViewModel.swift in Sources */,
 				DF26CF15283244C400B0F60B /* Forecast.swift in Sources */,

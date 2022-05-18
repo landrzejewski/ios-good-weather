@@ -11,6 +11,12 @@ import Resolver
 @main
 struct GoodWeatherApp: App {
     
+    init() {
+        UITabBar.appearance().backgroundColor = .black
+        UITabBar.appearance().unselectedItemTintColor = .lightGray
+        UITabBar.appearance().isTranslucent = false
+    }
+    
     @Injected
     private var profileViewModel: ProfileViewModel
     
@@ -23,12 +29,14 @@ struct GoodWeatherApp: App {
                         Image(systemName: "sun.max.fill")
                         Text("Forecast")
                     }
+                    .accentColor(.orange)
                 ProfileView(viewModel: profileViewModel)
                     .tabItem {
                         Image(systemName: "person")
                         Text("Profile")
                     }
             }
+            .accentColor(.accentColor)
         }
     }
 }
