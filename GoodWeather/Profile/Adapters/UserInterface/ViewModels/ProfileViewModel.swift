@@ -40,7 +40,7 @@ final class ProfileViewModel: ObservableObject {
         profileEventBus.profile
             .sink(receiveCompletion: { _ in}, receiveValue: update)
             .store(in: &cancellable)
-        Publishers.CombineLatest(emailIsValid(), passwordIsValid())
+        Publishers.CombineLatest(emailIsValid($email), passwordIsValid($password))
             .map { [$0, $1] }
             .map { errors in errors.filter { !$0.isEmpty } }
             .assign(to: &$errors)
@@ -51,24 +51,15 @@ final class ProfileViewModel: ObservableObject {
         profileEventBus.profile.send(profile)
     }
     
-    private func emailIsValid() -> AnyPublisher<String, Never> {
-        $email.map { $0.contains("@") && $0.contains(".") }
-            .map { $0 ? "" : "Invalid email" }
-            .eraseToAnyPublisher()
-    }
-   
-    private func passwordIsValid() -> AnyPublisher<String, Never> {
-        $password.map { $0.count > 6 }
-            .map { $0 ? "" : "Password is too short" }
-            .eraseToAnyPublisher()
-    }
-    
     private func update(profile: Profile) {
         firstName = profile.firstName
         lastName = profile.lastName
         email = profile.email
         password = profile.password
         isSubscriber = profile.isSubscriber
+        cardNumber = profile.card?.number ?? ""
+        cardCvv = profile.card?.number ?? ""
+        cardExpirationDate = profile.card?.expirationDate ?? Date()
     }
     
 }

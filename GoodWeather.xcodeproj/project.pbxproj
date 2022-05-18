@@ -16,6 +16,7 @@
 		B204394E2834F5AC00429E20 /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204394D2834F5AC00429E20 /* UserCard.swift */; };
 		B20439502834F64F00429E20 /* ProfileEventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204394F2834F64F00429E20 /* ProfileEventBus.swift */; };
 		B20439522834F6AB00429E20 /* FakeProfileEventBus .swift in Sources */ = {isa = PBXBuildFile; fileRef = B20439512834F6AB00429E20 /* FakeProfileEventBus .swift */; };
+		B20439542835094500429E20 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20439532835094500429E20 /* Validators.swift */; };
 		DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */; };
 		DF26CEE22832402D00B0F60B /* ForecastRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */; };
 		DF26CEE42832402E00B0F60B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF26CEE32832402E00B0F60B /* Assets.xcassets */; };
@@ -108,6 +109,7 @@
 		B204394D2834F5AC00429E20 /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
 		B204394F2834F64F00429E20 /* ProfileEventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEventBus.swift; sourceTree = "<group>"; };
 		B20439512834F6AB00429E20 /* FakeProfileEventBus .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FakeProfileEventBus .swift"; sourceTree = "<group>"; };
+		B20439532835094500429E20 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		DF26CEDC2832402D00B0F60B /* GoodWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWeatherApp.swift; sourceTree = "<group>"; };
 		DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRouterView.swift; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 				DF26CF482832651A00B0F60B /* View+ext.swift */,
 				DF26CF542832863A00B0F60B /* DefaultButtonStyle.swift */,
 				DF26CF6928329DBF00B0F60B /* UI+ext.swift */,
+				B20439532835094500429E20 /* Validators.swift */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -699,6 +702,7 @@
 				B204394A2834EBD600429E20 /* ProfileView.swift in Sources */,
 				DF61FDD92833DA710018C770 /* CityEntity+CoreDataProperties.swift in Sources */,
 				DF26CF58283290FF00B0F60B /* CityDto.swift in Sources */,
+				B20439542835094500429E20 /* Validators.swift in Sources */,
 				DF26CF272832521100B0F60B /* FakeForecastProvider.swift in Sources */,
 				DF61FDD82833DA710018C770 /* CityEntity+CoreDataClass.swift in Sources */,
 				DF26CF2D2832543A00B0F60B /* FakeForecastRepository.swift in Sources */,

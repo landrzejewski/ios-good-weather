@@ -10,6 +10,6 @@ import Combine
 
 final class FakeProfileEventBus : ProfileEventBus {
    
-    var profile = CurrentValueSubject<Profile, Never>(Profile(firstName: "Jan", lastName: "Kowalski", dateOfBirth: Date(), email: "jan@training.pl", password: "123", isSubscriber: false, card: nil))
+    var profile = CurrentValueSubject<Profile, Never>(Profile(firstName: "Jan", lastName: "Kowalski", dateOfBirth: Date(), email: "jan@training.pl", password: "123", isSubscriber: true, card: nil))
     
 }
