@@ -22,7 +22,7 @@ struct FoodListView: View {
                     }
             }
             .disabled(viewModel.showDetails)
-            .blur(radius: viewModel.showDetails ? 5 : 0)
+            .blur(radius: viewModel.showDetails ? 5 : 0.1)
             if !viewModel.isLoading && viewModel.food.isEmpty {
                 EmptyView(imageName: "xmark.circle", message: "Menu is unavailable")
             }
@@ -42,3 +42,4 @@ struct FoodListView_Previews: PreviewProvider {
         FoodListView(viewModel: FoodListViewModel())
     }
 }
+
