@@ -27,6 +27,9 @@
 		B204397128351B0400429E20 /* FoodListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204397028351B0400429E20 /* FoodListViewModel.swift */; };
 		B204397328351D2E00429E20 /* RestaurantResolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204397228351D2E00429E20 /* RestaurantResolver+ext.swift */; };
 		B20439752835221C00429E20 /* FoodDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20439742835221C00429E20 /* FoodDetailsView.swift */; };
+		B204397C28353A1000429E20 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204397B28353A1000429E20 /* LoginViewModel.swift */; };
+		B204397E28353AA600429E20 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204397D28353AA600429E20 /* LoginView.swift */; };
+		B204398028353BAB00429E20 /* SecurityResolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204397F28353BAB00429E20 /* SecurityResolver+ext.swift */; };
 		DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */; };
 		DF26CEE22832402D00B0F60B /* ForecastRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */; };
 		DF26CEE42832402E00B0F60B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF26CEE32832402E00B0F60B /* Assets.xcassets */; };
@@ -130,6 +133,9 @@
 		B204397028351B0400429E20 /* FoodListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListViewModel.swift; sourceTree = "<group>"; };
 		B204397228351D2E00429E20 /* RestaurantResolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantResolver+ext.swift"; sourceTree = "<group>"; };
 		B20439742835221C00429E20 /* FoodDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsView.swift; sourceTree = "<group>"; };
+		B204397B28353A1000429E20 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		B204397D28353AA600429E20 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B204397F28353BAB00429E20 /* SecurityResolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecurityResolver+ext.swift"; sourceTree = "<group>"; };
 		DF26CEDC2832402D00B0F60B /* GoodWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWeatherApp.swift; sourceTree = "<group>"; };
 		DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRouterView.swift; sourceTree = "<group>"; };
@@ -349,6 +355,48 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		B2043976283539AC00429E20 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				B2043977283539C400429E20 /* Adapters */,
+				B204397F28353BAB00429E20 /* SecurityResolver+ext.swift */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		B2043977283539C400429E20 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				B2043978283539D300429E20 /* UserInterface */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		B2043978283539D300429E20 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				B2043979283539DF00429E20 /* Views */,
+				B204397A283539EF00429E20 /* ViewModels */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		B2043979283539DF00429E20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B204397D28353AA600429E20 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B204397A283539EF00429E20 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B204397B28353A1000429E20 /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		DF26CED32832402D00B0F60B = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +424,7 @@
 				DF26CF09283240C800B0F60B /* Forecast */,
 				B20439632835169600429E20 /* Restaurant */,
 				B204393E2834EA8F00429E20 /* Profile */,
+				B2043976283539AC00429E20 /* Security */,
 				DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */,
 				DF61FD472833996A0018C770 /* Resolver+ext.swift */,
 				DF26CEE32832402E00B0F60B /* Assets.xcassets */,
@@ -775,6 +824,7 @@
 				DF61FDBD2833CEE20018C770 /* CoreDataForecastRepository.swift in Sources */,
 				DF61FDA32833CA800018C770 /* ForecastModel.xcdatamodeld in Sources */,
 				DF61FD4E2833A4850018C770 /* UserProperty.swift in Sources */,
+				B204397C28353A1000429E20 /* LoginViewModel.swift in Sources */,
 				B20439502834F64F00429E20 /* ProfileEventBus.swift in Sources */,
 				DF26CF4B2832769100B0F60B /* ForecastViewModelMapper.swift in Sources */,
 				DF26CF5128327F3A00B0F60B /* ForecastRoute.swift in Sources */,
@@ -786,6 +836,7 @@
 				DF26CF472832644900B0F60B /* Text+ext.swift in Sources */,
 				DF26CF682832957E00B0F60B /* URLSessionForecastProviderError.swift in Sources */,
 				DF26CF6A28329DBF00B0F60B /* UI+ext.swift in Sources */,
+				B204398028353BAB00429E20 /* SecurityResolver+ext.swift in Sources */,
 				B204394A2834EBD600429E20 /* ProfileView.swift in Sources */,
 				B204395C28350BA100429E20 /* EmptyView.swift in Sources */,
 				DF61FDD92833DA710018C770 /* CityEntity+CoreDataProperties.swift in Sources */,
@@ -797,6 +848,7 @@
 				DF26CF2D2832543A00B0F60B /* FakeForecastRepository.swift in Sources */,
 				B20439752835221C00429E20 /* FoodDetailsView.swift in Sources */,
 				DF26CF37283256F000B0F60B /* ForecastRouter.swift in Sources */,
+				B204397E28353AA600429E20 /* LoginView.swift in Sources */,
 				DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */,
 				DF26CF1A2832465700B0F60B /* ForecastProviderError.swift in Sources */,
 				DF26CF242832494200B0F60B /* GetForecastService.swift in Sources */,

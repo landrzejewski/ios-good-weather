@@ -19,6 +19,7 @@ extension Resolver: ResolverRegistering {
         registerForecastComponents()
         registerRestaurantComponents()
         registerProfileComponents()
+        registerSecurityComponents()
     }
     
 }

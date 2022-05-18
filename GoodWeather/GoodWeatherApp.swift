@@ -17,31 +17,34 @@ struct GoodWeatherApp: App {
     
     
     @Injected
-    private var foodListViewModel: FoodListViewModel
+    var foodListViewModel: FoodListViewModel
     @Injected
-    private var profileViewModel: ProfileViewModel
+    var profileViewModel: ProfileViewModel
+    @Injected
+    var loginViewModel: LoginViewModel
     
     var body: some Scene {
         WindowGroup {
-            TabView {
-                ForecastRouterView()
-                    .environmentObject(ForecastRouter())
-                    .tabItem {
-                        Image(systemName: "sun.max.fill")
-                        Text("Forecast")
-                    }
-                FoodListView(viewModel: foodListViewModel)
-                    .tabItem {
-                        Image(systemName: "list.dash")
-                        Text("Menu")
-                    }
-                ProfileView(viewModel: profileViewModel)
-                    .tabItem {
-                        Image(systemName: "person")
-                        Text("Profile")
-                    }
-            }
-            .accentColor(.accentColor)
+            LoginView(viewModel: loginViewModel)
+//            TabView {
+//                ForecastRouterView()
+//                    .environmentObject(ForecastRouter())
+//                    .tabItem {
+//                        Image(systemName: "sun.max.fill")
+//                        Text("Forecast")
+//                    }
+//                FoodListView(viewModel: foodListViewModel)
+//                    .tabItem {
+//                        Image(systemName: "list.dash")
+//                        Text("Menu")
+//                    }
+//                ProfileView(viewModel: profileViewModel)
+//                    .tabItem {
+//                        Image(systemName: "person")
+//                        Text("Profile")
+//                    }
+//            }
+//            .accentColor(.accentColor)
         }
     }
 }
