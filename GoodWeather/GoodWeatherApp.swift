@@ -12,9 +12,7 @@ import Resolver
 struct GoodWeatherApp: App {
     
     init() {
-        UITabBar.appearance().backgroundColor = .black
         UITabBar.appearance().unselectedItemTintColor = .lightGray
-        UITabBar.appearance().isTranslucent = false
     }
     
     
