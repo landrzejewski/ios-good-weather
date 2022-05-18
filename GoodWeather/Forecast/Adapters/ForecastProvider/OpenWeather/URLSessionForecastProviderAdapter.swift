@@ -7,6 +7,7 @@
 
 import Foundation
 import Resolver
+import Combine
 
 final class URLSessionForecastProviderAdapter: ForecastProvider {
     
@@ -15,28 +16,18 @@ final class URLSessionForecastProviderAdapter: ForecastProvider {
     @Injected
     var mapper: URLSessionForecastProviderMapper
    
-    func getForecast(for city: String, callback: @escaping (Result<Forecast, ForecastProviderError>) -> ()) {
-        provider.getForecast(for: city) { result in
-            switch result {
-            case .success(let data):
-                let forecast = self.mapper.toDomain(forecastDto: data)
-                callback(.success(forecast))
-            case .failure(_):
-                callback(.failure(.getForecastFailed))
-            }
-        }
+    func getForecast(for city: String) -> AnyPublisher<Forecast, ForecastProviderError> {
+        return map(forecast: provider.getForecast(for: city))
     }
     
-    func getForecast(for location: (Double, Double), callback: @escaping (Result<Forecast, ForecastProviderError>) -> ()) {
-        provider.getForecast(for: location) { result in
-            switch result {
-            case .success(let data):
-                let forecast = self.mapper.toDomain(forecastDto: data)
-                callback(.success(forecast))
-            case .failure(_):
-                callback(.failure(.getForecastFailed))
-            }
-        }
+    func getForecast(for location: (Double, Double)) -> AnyPublisher<Forecast, ForecastProviderError> {
+        return map(forecast: provider.getForecast(for: location))
+    }
+    
+    private func map(forecast: AnyPublisher<ForecastDto, URLSessionForecastProviderError>) -> AnyPublisher<Forecast, ForecastProviderError> {
+        return forecast.map(mapper.toDomain)
+            .mapError { _ in ForecastProviderError.getForecastFailed }
+            .eraseToAnyPublisher()
     }
     
 }

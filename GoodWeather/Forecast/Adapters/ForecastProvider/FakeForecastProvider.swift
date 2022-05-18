@@ -6,24 +6,47 @@
 //
 
 import Foundation
+import Resolver
+import Combine
 
 final class FakeForecastProvider: ForecastProvider {
     
-    private let forecast = [
-        DayForecast(id: UUID(), date: Date(), temperature: 18.0, pressure: 1000.0, icon: "sun.max.fill", description: "Clear sky"),
-        DayForecast(id: UUID(), date: Date(), temperature: 22.0, pressure: 1001.0, icon: "cloud.fill", description: "Clear sky"),
-        DayForecast(id: UUID(), date: Date(), temperature: 14.0, pressure: 1005.0, icon: "smoke.fill", description: "Clear sky"),
-        DayForecast(id: UUID(), date: Date(), temperature: 16.0, pressure: 1015.0, icon: "cloud.rain.fill", description: "Clear sky"),
-        DayForecast(id: UUID(), date: Date(), temperature: 21.0, pressure: 999.0, icon: "cloud.sun.bolt.fill", description: "Clear sky"),
-        DayForecast(id: UUID(), date: Date(), temperature: 24.0, pressure: 998.0, icon: "cloud.sun.rain.fill", description: "Clear sky")
-    ]
+    private let fileName: String
+    private let decoder: JSONDecoder
+    @Injected
+    var mapper: URLSessionForecastProviderMapper
+    
+    init(fileName: String = "data", decoder: JSONDecoder = JSONDecoder()) {
+        self.fileName = fileName
+        self.decoder = decoder
+    }
    
-    func getForecast(for city: String, callback: @escaping (Result<Forecast, ForecastProviderError>) -> ()) {
-        callback(.success(Forecast(city: city, forecast: forecast)))
+    func getForecast(for city: String) -> AnyPublisher<Forecast, ForecastProviderError> {
+        return map(forecast: Just(readData()))
     }
     
-    func getForecast(for location: (Double, Double), callback: @escaping (Result<Forecast, ForecastProviderError>) -> ()) {
-        callback(.success(Forecast(city: "Warsaw", forecast: forecast)))
+    func getForecast(for location: (Double, Double)) -> AnyPublisher<Forecast, ForecastProviderError> {
+        return map(forecast: Just(readData()))
+    }
+    
+    private func map(forecast: Just<Forecast>) -> AnyPublisher<Forecast, ForecastProviderError> {
+        return forecast
+            .setFailureType(to: ForecastProviderError.self)
+            .eraseToAnyPublisher()
+    }
+    
+    private func readData() -> Forecast {
+        let data = readFile(withName: fileName)!
+        let forecastDto = try! decoder.decode(ForecastDto.self, from: data)
+        return mapper.toDomain(forecastDto: forecastDto)
+    }
+    
+    private func readFile(withName name: String, ofType type: String = "json") -> Data? {
+        guard let filePath = Bundle.main.path(forResource: name, ofType: type),
+              let data = try? String(contentsOfFile: filePath).data(using: .utf8) else {
+            return nil
+        }
+        return data
     }
     
 }

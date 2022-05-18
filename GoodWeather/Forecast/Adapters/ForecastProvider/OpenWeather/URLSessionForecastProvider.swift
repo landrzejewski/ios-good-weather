@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 final class URLSessionForecastProvider {
     
@@ -17,47 +18,24 @@ final class URLSessionForecastProvider {
         self.decoder = decoder
     }
     
-    func getForecast(for city: String, callback: @escaping (Result<ForecastDto, URLSessionForecastProviderError>) -> ()) {
-        guard let requestURL = URL(string: "\(url)&q=\(city)") else {
-            callback(.failure(.invalidRequestUrl))
-            return
-        }
-        getForecast(requestURL: requestURL, callback: callback)
+    func getForecast(for city: String) -> AnyPublisher<ForecastDto, URLSessionForecastProviderError> {
+        return getForecast(requestURL: "\(url)&q=\(city)")
     }
     
-    func getForecast(for location: (Double, Double), callback: @escaping (Result<ForecastDto, URLSessionForecastProviderError>) -> ()) {
-        guard let requestURL = URL(string: "\(url)&lon=\(location.0)&lat=\(location.1)") else {
-            callback(.failure(.invalidRequestUrl))
-            return
-        }
-        getForecast(requestURL: requestURL, callback: callback)
+    func getForecast(for location: (Double, Double)) -> AnyPublisher<ForecastDto, URLSessionForecastProviderError> {
+        return getForecast(requestURL: "\(url)&lon=\(location.0)&lat=\(location.1)")
     }
     
-    private func getForecast(requestURL: URL, callback: @escaping (Result<ForecastDto, URLSessionForecastProviderError>) -> ()) {
-        let request = URLRequest(url: requestURL)
-        URLSession.shared.dataTask(with: request) { text, response, error in
-            if let error = error {
-                callback(.failure(.error(error.localizedDescription)))
-                return
-            }
-            let responseStatus = (response as? HTTPURLResponse)?.statusCode ?? -1
-            guard (200...299).contains(responseStatus) else {
-                callback(.failure(.requestFailed(responseStatus)))
-                return
-            }
-            guard let json = text else {
-                callback(.failure(.invalidResponseData))
-                return
-            }
-            do {
-                let forecast = try self.decoder.decode(ForecastDto.self, from: json)
-                callback(.success(forecast))
-            } catch {
-                print(error)
-                callback(.failure(.parsingFailed(error.localizedDescription)))
-            }
+    private func getForecast(requestURL: String) -> AnyPublisher<ForecastDto, URLSessionForecastProviderError> {
+        guard let url = URL(string: requestURL) else {
+            return Fail(error: URLSessionForecastProviderError.invalidRequestUrl).eraseToAnyPublisher()
         }
-        .resume()
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .mapError { URLSessionForecastProviderError.requestFailed($0.errorCode) }
+            .map { $0.data }
+            .decode(type: ForecastDto.self, decoder: decoder)
+            .mapError { URLSessionForecastProviderError.parsingFailed($0.localizedDescription) }
+            .eraseToAnyPublisher()
     }
     
 }

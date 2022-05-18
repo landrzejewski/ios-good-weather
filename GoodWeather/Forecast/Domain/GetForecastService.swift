@@ -7,40 +7,41 @@
 
 import Foundation
 import Resolver
+import Combine
 
 final class GetForecastService: GetForecastUseCase {
-
+    
     @Injected(name: .proxy)
     private var forecastProvider: ForecastProvider
     @Injected
     private var forecastRepository: ForecastQueries & ForecastUpdates
-
-    func getForecast(for city: String, callback: @escaping (Result<Forecast, GetForecastError>) -> ()) {
-        forecastRepository.getAll(for: city) { cachedForecast in
-            if !cachedForecast.isEmpty {
-                callback(.success(Forecast(city: city, forecast: cachedForecast)))
-            }
-        }
-        forecastProvider.getForecast(for: city) { self.onForecastLoaded(result: $0, callback: callback) }
+    private var cancellable = Set<AnyCancellable>()
+    
+    func getForecast(for city: String) -> AnyPublisher<Forecast, GetForecastError> {
+        let forecast = PassthroughSubject<Forecast, GetForecastError>()
+        forecastRepository.getAll(for: city) { forecast.send(Forecast(city: city, forecast: $0)) }
+        map(input: forecastProvider.getForecast(for: city), output: forecast)
+        return forecast.eraseToAnyPublisher()
     }
     
-    func getForecast(for location: (Double, Double), callback: @escaping (Result<Forecast, GetForecastError>) -> ()) {
-        forecastProvider.getForecast(for: location) { self.onForecastLoaded(result: $0, callback: callback) }
+    func getForecast(for location: (Double, Double)) -> AnyPublisher<Forecast, GetForecastError> {
+        let forecast = PassthroughSubject<Forecast, GetForecastError>()
+        map(input: forecastProvider.getForecast(for: location), output: forecast)
+        return forecast.eraseToAnyPublisher()
     }
-        
-    private func onForecastLoaded(result: Result<Forecast, ForecastProviderError>, callback: @escaping (Result<Forecast, GetForecastError>) -> ()) {
-        switch result {
-        case .success(let data):
-            forecastRepository.deleteAll()
-            do {
-                try forecastRepository.save(forecast: data.forecast, for: data.city)
-                callback(.success(data))
-            }  catch {
-                callback(.failure(.saveForecastFailed))
+    
+    private func map(input: AnyPublisher<Forecast, ForecastProviderError>, output: PassthroughSubject<Forecast, GetForecastError>) {
+        input.mapError { _ in GetForecastError.getForecastFailed }
+            .sink(receiveCompletion: { _ in }) {
+                self.forecastRepository.deleteAll()
+                do {
+                    try self.forecastRepository.save(forecast: $0.forecast, for: $0.city)
+                    output.send($0)
+                } catch {
+                    output.send(completion: .failure(GetForecastError.saveForecastFailed))
+                }
             }
-        case .failure(_):
-            callback(.failure(.getForecastFailed))
-        }
+            .store(in: &cancellable)
     }
     
 }

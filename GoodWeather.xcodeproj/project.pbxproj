@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B204393B2834AC9200429E20 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = B204393A2834AC9200429E20 /* SQLite */; };
+		B204393D2834CD2500429E20 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B204393C2834CD2500429E20 /* data.json */; };
 		DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */; };
 		DF26CEE22832402D00B0F60B /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEE12832402D00B0F60B /* RouterView.swift */; };
 		DF26CEE42832402E00B0F60B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF26CEE32832402E00B0F60B /* Assets.xcassets */; };
@@ -51,7 +53,6 @@
 		DF26CF66283293EF00B0F60B /* URLSessionForecastProviderMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF65283293EF00B0F60B /* URLSessionForecastProviderMapper.swift */; };
 		DF26CF682832957E00B0F60B /* URLSessionForecastProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF672832957E00B0F60B /* URLSessionForecastProviderError.swift */; };
 		DF26CF6A28329DBF00B0F60B /* UI+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF6928329DBF00B0F60B /* UI+ext.swift */; };
-		DF61FD3A2833850E0018C770 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = DF61FD392833850E0018C770 /* SQLite */; };
 		DF61FD3C283385690018C770 /* SqlForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD3B283385690018C770 /* SqlForecastRepository.swift */; };
 		DF61FD3E283391E70018C770 /* CoreLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FD3D283391E70018C770 /* CoreLocationProvider.swift */; };
 		DF61FD46283399280018C770 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = DF61FD45283399280018C770 /* Resolver */; };
@@ -92,6 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B204393C2834CD2500429E20 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		DF26CEDC2832402D00B0F60B /* GoodWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWeatherApp.swift; sourceTree = "<group>"; };
 		DF26CEE12832402D00B0F60B /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
@@ -166,8 +168,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B204393B2834AC9200429E20 /* SQLite in Frameworks */,
 				DF61FD46283399280018C770 /* Resolver in Frameworks */,
-				DF61FD3A2833850E0018C770 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +221,7 @@
 				DF61FD472833996A0018C770 /* Resolver+ext.swift */,
 				DF26CEE32832402E00B0F60B /* Assets.xcassets */,
 				DF61FD43283397740018C770 /* Info.plist */,
+				B204393C2834CD2500429E20 /* data.json */,
 				DF26CEE52832402E00B0F60B /* Preview Content */,
 			);
 			path = GoodWeather;
@@ -470,8 +473,8 @@
 			);
 			name = GoodWeather;
 			packageProductDependencies = (
-				DF61FD392833850E0018C770 /* SQLite */,
 				DF61FD45283399280018C770 /* Resolver */,
+				B204393A2834AC9200429E20 /* SQLite */,
 			);
 			productName = GoodWeather;
 			productReference = DF26CEDC2832402D00B0F60B /* GoodWeather.app */;
@@ -548,6 +551,7 @@
 			packageReferences = (
 				DF61FD382833850E0018C770 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 				DF61FD44283399280018C770 /* XCRemoteSwiftPackageReference "Resolver" */,
+				B20439392834AC9200429E20 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = DF26CEDD2832402D00B0F60B /* Products */;
 			projectDirPath = "";
@@ -566,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF26CEE72832402E00B0F60B /* Preview Assets.xcassets in Resources */,
+				B204393D2834CD2500429E20 /* data.json in Resources */,
 				DF26CEE42832402E00B0F60B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -977,6 +982,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B20439392834AC9200429E20 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
 		DF61FD382833850E0018C770 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
@@ -996,7 +1009,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DF61FD392833850E0018C770 /* SQLite */ = {
+		B204393A2834AC9200429E20 /* SQLite */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DF61FD382833850E0018C770 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
 			productName = SQLite;

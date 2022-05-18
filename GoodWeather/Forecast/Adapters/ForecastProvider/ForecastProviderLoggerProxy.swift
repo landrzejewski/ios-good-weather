@@ -7,6 +7,7 @@
 
 import Foundation
 import Resolver
+import Combine
 
 final class ForecastProviderLoggerProxy: ForecastProvider {
 
@@ -15,14 +16,14 @@ final class ForecastProviderLoggerProxy: ForecastProvider {
     @Injected
     var loggeer: Logger
     
-    func getForecast(for city: String, callback: @escaping (Result<Forecast, ForecastProviderError>) -> ()) {
+    func getForecast(for city: String) -> AnyPublisher<Forecast, ForecastProviderError> {
         loggeer.log(level: .info, message: "Loading forecast for city \(city) from server")
-        provider.getForecast(for: city, callback: callback)
+        return provider.getForecast(for: city)
     }
     
-    func getForecast(for location: (Double, Double), callback: @escaping (Result<Forecast, ForecastProviderError>) -> ()) {
+    func getForecast(for location: (Double, Double)) -> AnyPublisher<Forecast, ForecastProviderError> {
         loggeer.log(level: .info, message: "Loading forecast for location \(location) from server")
-        provider.getForecast(for: location, callback: callback)
+        return provider.getForecast(for: location)
     }
     
 }
