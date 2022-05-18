@@ -25,9 +25,20 @@ struct ForecastDetailsView: View {
                     Spacer()
                 }
                 .padding()
+                Text(viewModel.date)
+                    .defaultStyle(size: 32)
                 Spacer()
+                Image(systemName: viewModel.icon)
+                    .iconStyle(width: 200, height: 200)
                 Text(viewModel.description)
                     .defaultStyle(size: 32)
+                    .padding(.bottom, 48)
+                HStack(spacing: 48) {
+                    Text(viewModel.temperature)
+                        .defaultStyle(size: 32)
+                    Text(viewModel.pressure)
+                        .defaultStyle(size: 32)
+                }
                 Spacer()
             }
         }
