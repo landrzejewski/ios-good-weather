@@ -17,6 +17,13 @@
 		B20439502834F64F00429E20 /* ProfileEventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204394F2834F64F00429E20 /* ProfileEventBus.swift */; };
 		B20439522834F6AB00429E20 /* FakeProfileEventBus .swift in Sources */ = {isa = PBXBuildFile; fileRef = B20439512834F6AB00429E20 /* FakeProfileEventBus .swift */; };
 		B20439542835094500429E20 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20439532835094500429E20 /* Validators.swift */; };
+		B204395B28350BA100429E20 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204395528350BA000429E20 /* ActivityIndicatorView.swift */; };
+		B204395C28350BA100429E20 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204395628350BA000429E20 /* EmptyView.swift */; };
+		B204395D28350BA100429E20 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204395728350BA000429E20 /* ImageLoader.swift */; };
+		B204395E28350BA100429E20 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204395828350BA000429E20 /* LazyImageView.swift */; };
+		B204395F28350BA100429E20 /* LazyImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204395928350BA000429E20 /* LazyImageViewModel.swift */; };
+		B204396028350BA100429E20 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204395A28350BA000429E20 /* LoadingView.swift */; };
+		B204396228350BAE00429E20 /* URLSession+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204396128350BAE00429E20 /* URLSession+ext.swift */; };
 		DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */; };
 		DF26CEE22832402D00B0F60B /* ForecastRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */; };
 		DF26CEE42832402E00B0F60B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF26CEE32832402E00B0F60B /* Assets.xcassets */; };
@@ -110,6 +117,13 @@
 		B204394F2834F64F00429E20 /* ProfileEventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEventBus.swift; sourceTree = "<group>"; };
 		B20439512834F6AB00429E20 /* FakeProfileEventBus .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FakeProfileEventBus .swift"; sourceTree = "<group>"; };
 		B20439532835094500429E20 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		B204395528350BA000429E20 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		B204395628350BA000429E20 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		B204395728350BA000429E20 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		B204395828350BA000429E20 /* LazyImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
+		B204395928350BA000429E20 /* LazyImageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImageViewModel.swift; sourceTree = "<group>"; };
+		B204395A28350BA000429E20 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		B204396128350BAE00429E20 /* URLSession+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+ext.swift"; sourceTree = "<group>"; };
 		DF26CEDC2832402D00B0F60B /* GoodWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWeatherApp.swift; sourceTree = "<group>"; };
 		DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRouterView.swift; sourceTree = "<group>"; };
@@ -476,6 +490,7 @@
 				DF26CF452832636400B0F60B /* UserInterface */,
 				DF61FD4B2833A3360018C770 /* Capitalized.swift */,
 				DF61FD4D2833A4850018C770 /* UserProperty.swift */,
+				B204396128350BAE00429E20 /* URLSession+ext.swift */,
 				DF61FD9F2833C6B30018C770 /* CoreDataStack.swift */,
 			);
 			path = Commons;
@@ -484,6 +499,12 @@
 		DF26CF452832636400B0F60B /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				B204395528350BA000429E20 /* ActivityIndicatorView.swift */,
+				B204395628350BA000429E20 /* EmptyView.swift */,
+				B204395728350BA000429E20 /* ImageLoader.swift */,
+				B204395828350BA000429E20 /* LazyImageView.swift */,
+				B204395928350BA000429E20 /* LazyImageViewModel.swift */,
+				B204395A28350BA000429E20 /* LoadingView.swift */,
 				DF26CF412832605600B0F60B /* Color+ext.swift */,
 				DF26CF432832621400B0F60B /* Image+ext.swift */,
 				DF26CF462832644900B0F60B /* Text+ext.swift */,
@@ -679,6 +700,7 @@
 				DF26CF2A2832535E00B0F60B /* FakeLocationProvider.swift in Sources */,
 				DF61FDA02833C6B30018C770 /* CoreDataStack.swift in Sources */,
 				DF26CEE22832402D00B0F60B /* ForecastRouterView.swift in Sources */,
+				B204395F28350BA100429E20 /* LazyImageViewModel.swift in Sources */,
 				DF61FDBF2833CF230018C770 /* CoreDataForecastRepositoryAdapter.swift in Sources */,
 				B204394C2834F54F00429E20 /* Profile.swift in Sources */,
 				DF61FDDD2833E2C90018C770 /* ForecastProviderLoggerProxy.swift in Sources */,
@@ -700,6 +722,7 @@
 				DF26CF682832957E00B0F60B /* URLSessionForecastProviderError.swift in Sources */,
 				DF26CF6A28329DBF00B0F60B /* UI+ext.swift in Sources */,
 				B204394A2834EBD600429E20 /* ProfileView.swift in Sources */,
+				B204395C28350BA100429E20 /* EmptyView.swift in Sources */,
 				DF61FDD92833DA710018C770 /* CityEntity+CoreDataProperties.swift in Sources */,
 				DF26CF58283290FF00B0F60B /* CityDto.swift in Sources */,
 				B20439542835094500429E20 /* Validators.swift in Sources */,
@@ -713,10 +736,12 @@
 				DF26CF492832651A00B0F60B /* View+ext.swift in Sources */,
 				DF26CF11283243F800B0F60B /* GetForecastError.swift in Sources */,
 				DF26CF3B283258EC00B0F60B /* ForecastViewModel.swift in Sources */,
+				B204395D28350BA100429E20 /* ImageLoader.swift in Sources */,
 				DF26CF622832931800B0F60B /* URLSessionForecastProvider.swift in Sources */,
 				DF26CF18283245DD00B0F60B /* ForecastProvider.swift in Sources */,
 				B20439432834EAF200429E20 /* ProfileResolver+ext.swift in Sources */,
 				DF26CF642832935800B0F60B /* URLSessionForecastProviderAdapter.swift in Sources */,
+				B204396228350BAE00429E20 /* URLSession+ext.swift in Sources */,
 				DF26CF552832863A00B0F60B /* DefaultButtonStyle.swift in Sources */,
 				B204394E2834F5AC00429E20 /* UserCard.swift in Sources */,
 				DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */,
@@ -726,10 +751,12 @@
 				DF61FDE42833E55A0018C770 /* ConsoleLoggger.swift in Sources */,
 				DF61FD3E283391E70018C770 /* CoreLocationProvider.swift in Sources */,
 				DF26CF1F283247F300B0F60B /* ForecastUpdates.swift in Sources */,
+				B204396028350BA100429E20 /* LoadingView.swift in Sources */,
 				DF61FDDA2833DA710018C770 /* DayForecastEntity+CoreDataClass.swift in Sources */,
 				DF26CF5C283291A300B0F60B /* TemperatureDto.swift in Sources */,
 				DF61FDC12833CF860018C770 /* CoreDataForecastRepositoryMapper.swift in Sources */,
 				DF61FD4C2833A3360018C770 /* Capitalized.swift in Sources */,
+				B204395B28350BA100429E20 /* ActivityIndicatorView.swift in Sources */,
 				DF61FD4A283399F30018C770 /* ForecastResolver+ext.swift in Sources */,
 				DF26CF442832621400B0F60B /* Image+ext.swift in Sources */,
 				DF61FDDB2833DA710018C770 /* DayForecastEntity+CoreDataProperties.swift in Sources */,
@@ -741,6 +768,7 @@
 				DF26CF1D2832472D00B0F60B /* ForecastQueries.swift in Sources */,
 				DF26CF3D2832594B00B0F60B /* DayForecastViewModel.swift in Sources */,
 				DF26CF0F283241E300B0F60B /* GetForecastUseCase.swift in Sources */,
+				B204395E28350BA100429E20 /* LazyImageView.swift in Sources */,
 				DF26CF322832562100B0F60B /* ForecastView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
