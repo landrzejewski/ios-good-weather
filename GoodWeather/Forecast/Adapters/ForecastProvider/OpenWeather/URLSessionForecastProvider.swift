@@ -18,23 +18,19 @@ final class URLSessionForecastProvider {
     }
     
     func getForecast(for city: String, callback: @escaping (Result<ForecastDto, URLSessionForecastProviderError>) -> ()) {
-        guard let requestURL = URL(string: "\(url)&q=\(city)") else {
-            callback(.failure(.invalidRequestUrl))
-            return
-        }
-        getForecast(requestURL: requestURL, callback: callback)
+        getForecast(requestURL: "\(url)&q=\(city)", callback: callback)
     }
     
     func getForecast(for location: (Double, Double), callback: @escaping (Result<ForecastDto, URLSessionForecastProviderError>) -> ()) {
-        guard let requestURL = URL(string: "\(url)&lon=\(location.0)&lat=\(location.1)") else {
+        getForecast(requestURL: "\(url)&lon=\(location.0)&lat=\(location.1)", callback: callback)
+    }
+    
+    private func getForecast(requestURL: String, callback: @escaping (Result<ForecastDto, URLSessionForecastProviderError>) -> ()) {
+        guard let url = URL(string: requestURL) else {
             callback(.failure(.invalidRequestUrl))
             return
         }
-        getForecast(requestURL: requestURL, callback: callback)
-    }
-    
-    private func getForecast(requestURL: URL, callback: @escaping (Result<ForecastDto, URLSessionForecastProviderError>) -> ()) {
-        let request = URLRequest(url: requestURL)
+        let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { text, response, error in
             if let error = error {
                 callback(.failure(.error(error.localizedDescription)))
