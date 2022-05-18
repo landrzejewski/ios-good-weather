@@ -32,7 +32,7 @@ final class ForecastViewModel: ObservableObject {
     
     init() {
         locationProvider.location.sink { location in
-            self.getForecastUseCase.getForecast(for: location, callback: self.onForecastRefreshed)
+            self.onForecastRefreshed(forecast: self.getForecastUseCase.getForecast(for: location))
         }
         .store(in: &cancellable)
         cityName = cachedCityName
@@ -47,22 +47,25 @@ final class ForecastViewModel: ObservableObject {
     }
     
     func refreshForecast(for city: String) {
-        getForecastUseCase.getForecast(for: city, callback: onForecastRefreshed)
+        onForecastRefreshed(forecast: getForecastUseCase.getForecast(for: city))
     }
     
     func refreshForecastForCurrentLocation() {
         locationProvider.refreshLocation()
     }
  
-    private func onForecastRefreshed(_ result: Result<Forecast, GetForecastError>) {
-        onMainThread { [self] in
-            switch result {
-            case .success(let forecast):
-                errors = false
-                update(forecast)
-            case .failure(_):
-                errors = true
-            }
+    private func onForecastRefreshed(forecast: AnyPublisher<Forecast, GetForecastError>) {
+        forecast.receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: onForecastRefreshed, receiveValue: update)
+            .store(in: &cancellable)
+    }
+    
+    private func onForecastRefreshed(completion: Subscribers.Completion<GetForecastError>) {
+        switch completion {
+        case .failure(_):
+            errors = true
+        default:
+            errors = false
         }
     }
     
