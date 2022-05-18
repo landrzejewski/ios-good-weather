@@ -14,7 +14,7 @@ struct ForecastView: View {
     @Environment(\.scenePhase)
     private var scenePhase
     @EnvironmentObject
-    private var router: Router
+    private var router: ForecastRouter
     @State
     private var showSettings = false
     @AppStorage("cityName") // should be moved to viewModel
@@ -53,9 +53,9 @@ struct ForecastView: View {
                 }
                 Spacer()
                 HStack(spacing: 16) {
-                    ForEach(viewModel.nextDaysForecast, id: \.id) {
-                        DayForecastView(viewModel: $0)
-                            .onTapGesture { router.route = .forecastDetails }
+                    ForEach(viewModel.nextDaysForecast, id: \.id) { dayForecastViewModel in
+                        DayForecastView(viewModel: dayForecastViewModel)
+                            .onTapGesture { router.route = .forecastDetails(dayForecastViewModel) }
                     }
                 }
                 Spacer()

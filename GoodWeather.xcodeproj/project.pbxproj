@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		B204393B2834AC9200429E20 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = B204393A2834AC9200429E20 /* SQLite */; };
 		B204393D2834CD2500429E20 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B204393C2834CD2500429E20 /* data.json */; };
+		B20439432834EAF200429E20 /* ProfileResolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20439422834EAF200429E20 /* ProfileResolver+ext.swift */; };
+		B20439482834EB9E00429E20 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20439472834EB9E00429E20 /* ProfileViewModel.swift */; };
+		B204394A2834EBD600429E20 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20439492834EBD600429E20 /* ProfileView.swift */; };
 		DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */; };
-		DF26CEE22832402D00B0F60B /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEE12832402D00B0F60B /* RouterView.swift */; };
+		DF26CEE22832402D00B0F60B /* ForecastRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */; };
 		DF26CEE42832402E00B0F60B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF26CEE32832402E00B0F60B /* Assets.xcassets */; };
 		DF26CEE72832402E00B0F60B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF26CEE62832402E00B0F60B /* Preview Assets.xcassets */; };
 		DF26CEF12832402E00B0F60B /* GoodWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEF02832402E00B0F60B /* GoodWeatherTests.swift */; };
@@ -30,7 +33,7 @@
 		DF26CF2A2832535E00B0F60B /* FakeLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF292832535E00B0F60B /* FakeLocationProvider.swift */; };
 		DF26CF2D2832543A00B0F60B /* FakeForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF2C2832543A00B0F60B /* FakeForecastRepository.swift */; };
 		DF26CF322832562100B0F60B /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF312832562100B0F60B /* ForecastView.swift */; };
-		DF26CF37283256F000B0F60B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF36283256F000B0F60B /* Router.swift */; };
+		DF26CF37283256F000B0F60B /* ForecastRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF36283256F000B0F60B /* ForecastRouter.swift */; };
 		DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF382832584A00B0F60B /* ForecastDetailsView.swift */; };
 		DF26CF3B283258EC00B0F60B /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF3A283258EC00B0F60B /* ForecastViewModel.swift */; };
 		DF26CF3D2832594B00B0F60B /* DayForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF3C2832594B00B0F60B /* DayForecastViewModel.swift */; };
@@ -40,7 +43,7 @@
 		DF26CF492832651A00B0F60B /* View+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF482832651A00B0F60B /* View+ext.swift */; };
 		DF26CF4B2832769100B0F60B /* ForecastViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF4A2832769100B0F60B /* ForecastViewModelMapper.swift */; };
 		DF26CF4D28327A3B00B0F60B /* DayForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF4C28327A3B00B0F60B /* DayForecastView.swift */; };
-		DF26CF5128327F3A00B0F60B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF5028327F3900B0F60B /* Route.swift */; };
+		DF26CF5128327F3A00B0F60B /* ForecastRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF5028327F3900B0F60B /* ForecastRoute.swift */; };
 		DF26CF53283283ED00B0F60B /* ForecastSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF52283283ED00B0F60B /* ForecastSettingsView.swift */; };
 		DF26CF552832863A00B0F60B /* DefaultButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF542832863A00B0F60B /* DefaultButtonStyle.swift */; };
 		DF26CF58283290FF00B0F60B /* CityDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CF57283290FF00B0F60B /* CityDto.swift */; };
@@ -94,9 +97,12 @@
 
 /* Begin PBXFileReference section */
 		B204393C2834CD2500429E20 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		B20439422834EAF200429E20 /* ProfileResolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileResolver+ext.swift"; sourceTree = "<group>"; };
+		B20439472834EB9E00429E20 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		B20439492834EBD600429E20 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DF26CEDC2832402D00B0F60B /* GoodWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWeatherApp.swift; sourceTree = "<group>"; };
-		DF26CEE12832402D00B0F60B /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
+		DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRouterView.swift; sourceTree = "<group>"; };
 		DF26CEE32832402E00B0F60B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF26CEE62832402E00B0F60B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DF26CEEC2832402E00B0F60B /* GoodWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,7 +124,7 @@
 		DF26CF292832535E00B0F60B /* FakeLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLocationProvider.swift; sourceTree = "<group>"; };
 		DF26CF2C2832543A00B0F60B /* FakeForecastRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeForecastRepository.swift; sourceTree = "<group>"; };
 		DF26CF312832562100B0F60B /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
-		DF26CF36283256F000B0F60B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DF26CF36283256F000B0F60B /* ForecastRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRouter.swift; sourceTree = "<group>"; };
 		DF26CF382832584A00B0F60B /* ForecastDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetailsView.swift; sourceTree = "<group>"; };
 		DF26CF3A283258EC00B0F60B /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 		DF26CF3C2832594B00B0F60B /* DayForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecastViewModel.swift; sourceTree = "<group>"; };
@@ -128,7 +134,7 @@
 		DF26CF482832651A00B0F60B /* View+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ext.swift"; sourceTree = "<group>"; };
 		DF26CF4A2832769100B0F60B /* ForecastViewModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewModelMapper.swift; sourceTree = "<group>"; };
 		DF26CF4C28327A3B00B0F60B /* DayForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecastView.swift; sourceTree = "<group>"; };
-		DF26CF5028327F3900B0F60B /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		DF26CF5028327F3900B0F60B /* ForecastRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRoute.swift; sourceTree = "<group>"; };
 		DF26CF52283283ED00B0F60B /* ForecastSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSettingsView.swift; sourceTree = "<group>"; };
 		DF26CF542832863A00B0F60B /* DefaultButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButtonStyle.swift; sourceTree = "<group>"; };
 		DF26CF57283290FF00B0F60B /* CityDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDto.swift; sourceTree = "<group>"; };
@@ -190,6 +196,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B204393E2834EA8F00429E20 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B204393F2834EABA00429E20 /* Adapters */,
+				B20439402834EAC000429E20 /* Ports */,
+				B20439412834EACA00429E20 /* Domain */,
+				B20439422834EAF200429E20 /* ProfileResolver+ext.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		B204393F2834EABA00429E20 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				B20439442834EB5E00429E20 /* UserInterface */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		B20439402834EAC000429E20 /* Ports */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Ports;
+			sourceTree = "<group>";
+		};
+		B20439412834EACA00429E20 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B20439442834EB5E00429E20 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				B20439452834EB6F00429E20 /* Views */,
+				B20439462834EB7A00429E20 /* ViewModels */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		B20439452834EB6F00429E20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B20439492834EBD600429E20 /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B20439462834EB7A00429E20 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B20439472834EB9E00429E20 /* ProfileViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		DF26CED32832402D00B0F60B = {
 			isa = PBXGroup;
 			children = (
@@ -215,9 +279,8 @@
 			children = (
 				DF26CF402832604800B0F60B /* Commons */,
 				DF26CF09283240C800B0F60B /* Forecast */,
+				B204393E2834EA8F00429E20 /* Profile */,
 				DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */,
-				DF26CEE12832402D00B0F60B /* RouterView.swift */,
-				DF26CF5028327F3900B0F60B /* Route.swift */,
 				DF61FD472833996A0018C770 /* Resolver+ext.swift */,
 				DF26CEE32832402E00B0F60B /* Assets.xcassets */,
 				DF61FD43283397740018C770 /* Info.plist */,
@@ -259,6 +322,9 @@
 				DF26CF0A2832410F00B0F60B /* Ports */,
 				DF26CF0B2832413900B0F60B /* Domain */,
 				DF61FD49283399F30018C770 /* ForecastResolver+ext.swift */,
+				DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */,
+				DF26CF36283256F000B0F60B /* ForecastRouter.swift */,
+				DF26CF5028327F3900B0F60B /* ForecastRoute.swift */,
 			);
 			path = Forecast;
 			sourceTree = "<group>";
@@ -404,7 +470,6 @@
 		DF26CF452832636400B0F60B /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
-				DF26CF36283256F000B0F60B /* Router.swift */,
 				DF26CF412832605600B0F60B /* Color+ext.swift */,
 				DF26CF432832621400B0F60B /* Image+ext.swift */,
 				DF26CF462832644900B0F60B /* Text+ext.swift */,
@@ -598,7 +663,7 @@
 			files = (
 				DF26CF2A2832535E00B0F60B /* FakeLocationProvider.swift in Sources */,
 				DF61FDA02833C6B30018C770 /* CoreDataStack.swift in Sources */,
-				DF26CEE22832402D00B0F60B /* RouterView.swift in Sources */,
+				DF26CEE22832402D00B0F60B /* ForecastRouterView.swift in Sources */,
 				DF61FDBF2833CF230018C770 /* CoreDataForecastRepositoryAdapter.swift in Sources */,
 				DF61FDDD2833E2C90018C770 /* ForecastProviderLoggerProxy.swift in Sources */,
 				DF26CF66283293EF00B0F60B /* URLSessionForecastProviderMapper.swift in Sources */,
@@ -608,7 +673,7 @@
 				DF61FDA32833CA800018C770 /* ForecastModel.xcdatamodeld in Sources */,
 				DF61FD4E2833A4850018C770 /* UserProperty.swift in Sources */,
 				DF26CF4B2832769100B0F60B /* ForecastViewModelMapper.swift in Sources */,
-				DF26CF5128327F3A00B0F60B /* Route.swift in Sources */,
+				DF26CF5128327F3A00B0F60B /* ForecastRoute.swift in Sources */,
 				DF26CF422832605600B0F60B /* Color+ext.swift in Sources */,
 				DF26CF602832928000B0F60B /* ForecastDto.swift in Sources */,
 				DF61FD482833996A0018C770 /* Resolver+ext.swift in Sources */,
@@ -617,12 +682,13 @@
 				DF26CF472832644900B0F60B /* Text+ext.swift in Sources */,
 				DF26CF682832957E00B0F60B /* URLSessionForecastProviderError.swift in Sources */,
 				DF26CF6A28329DBF00B0F60B /* UI+ext.swift in Sources */,
+				B204394A2834EBD600429E20 /* ProfileView.swift in Sources */,
 				DF61FDD92833DA710018C770 /* CityEntity+CoreDataProperties.swift in Sources */,
 				DF26CF58283290FF00B0F60B /* CityDto.swift in Sources */,
 				DF26CF272832521100B0F60B /* FakeForecastProvider.swift in Sources */,
 				DF61FDD82833DA710018C770 /* CityEntity+CoreDataClass.swift in Sources */,
 				DF26CF2D2832543A00B0F60B /* FakeForecastRepository.swift in Sources */,
-				DF26CF37283256F000B0F60B /* Router.swift in Sources */,
+				DF26CF37283256F000B0F60B /* ForecastRouter.swift in Sources */,
 				DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */,
 				DF26CF1A2832465700B0F60B /* ForecastProviderError.swift in Sources */,
 				DF26CF242832494200B0F60B /* GetForecastService.swift in Sources */,
@@ -631,6 +697,7 @@
 				DF26CF3B283258EC00B0F60B /* ForecastViewModel.swift in Sources */,
 				DF26CF622832931800B0F60B /* URLSessionForecastProvider.swift in Sources */,
 				DF26CF18283245DD00B0F60B /* ForecastProvider.swift in Sources */,
+				B20439432834EAF200429E20 /* ProfileResolver+ext.swift in Sources */,
 				DF26CF642832935800B0F60B /* URLSessionForecastProviderAdapter.swift in Sources */,
 				DF26CF552832863A00B0F60B /* DefaultButtonStyle.swift in Sources */,
 				DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */,
@@ -649,6 +716,7 @@
 				DF61FDDB2833DA710018C770 /* DayForecastEntity+CoreDataProperties.swift in Sources */,
 				DF61FD3C283385690018C770 /* SqlForecastRepository.swift in Sources */,
 				DF26CF132832445A00B0F60B /* DayForecast.swift in Sources */,
+				B20439482834EB9E00429E20 /* ProfileViewModel.swift in Sources */,
 				DF26CF15283244C400B0F60B /* Forecast.swift in Sources */,
 				DF26CF1D2832472D00B0F60B /* ForecastQueries.swift in Sources */,
 				DF26CF3D2832594B00B0F60B /* DayForecastViewModel.swift in Sources */,

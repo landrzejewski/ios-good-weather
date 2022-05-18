@@ -1,5 +1,5 @@
 //
-//  RouterView.swift
+//  ForecastRouterView.swift
 //  GoodWeather
 //
 //  Created by Łukasz Andrzejewski on 16/05/2022.
@@ -8,10 +8,10 @@
 import SwiftUI
 import Resolver
 
-struct RouterView: View {
+struct ForecastRouterView: View {
     
     @EnvironmentObject
-    private var router: Router
+    private var router: ForecastRouter
     @Injected
     private var viewModel: ForecastViewModel
     
@@ -19,15 +19,15 @@ struct RouterView: View {
         switch router.route {
         case .forecast:
             ForecastView(viewModel: viewModel)
-        case .forecastDetails:
-            ForecastDetailsView()
+        case .forecastDetails(let viewModel):
+            ForecastDetailsView(viewModel: viewModel)
         }
     }
     
 }
 
-struct RouterView_Previews: PreviewProvider {
+struct ForecastRouterView_Previews: PreviewProvider {
     static var previews: some View {
-        RouterView()
+        ForecastRouterView()
     }
 }

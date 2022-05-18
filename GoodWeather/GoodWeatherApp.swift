@@ -6,12 +6,29 @@
 //
 
 import SwiftUI
+import Resolver
 
 @main
 struct GoodWeatherApp: App {
+    
+    @Injected
+    private var profileViewModel: ProfileViewModel
+    
     var body: some Scene {
         WindowGroup {
-            RouterView().environmentObject(Router())
+            TabView {
+                ForecastRouterView()
+                    .environmentObject(ForecastRouter())
+                    .tabItem {
+                        Image(systemName: "sun.max.fill")
+                        Text("Forecast")
+                    }
+                ProfileView(viewModel: profileViewModel)
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("Profile")
+                    }
+            }
         }
     }
 }

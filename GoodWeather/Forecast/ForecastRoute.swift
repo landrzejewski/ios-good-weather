@@ -1,5 +1,5 @@
 //
-//  Route.swift
+//  ForecastRoute.swift
 //  GoodWeather
 //
 //  Created by Łukasz Andrzejewski on 16/05/2022.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum Route {
+enum ForecastRoute {
     
     case forecast
-    case forecastDetails
+    case forecastDetails(DayForecastViewModel)
     
 }
