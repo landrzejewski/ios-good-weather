@@ -5,14 +5,14 @@
       "name": "Asparagus steak",
       "description": "Nice and healthy steak.",
       "price": 120.5,
-      "imageUrl": "https://github.com/landrzejewski/best-food-swiftui/blob/main/extras/images/asparagus-steak.png?raw=true"
+      "imageUrl": "https://github.com/landrzejewski/ios-good-weather/blob/main/extras/images/asparagus-steak.png?raw=true"
     },
     {
       "id": 2,
       "name": "Healthy pizza",
       "description": "Mega pizza.",
       "price": 90,
-      "imageUrl": "https://github.com/landrzejewski/best-food-swiftui/blob/main/extras/images/healthy-pizza.png?raw=true"
+      "imageUrl": "https://github.com/landrzejewski/ios-good-weather/blob/main/extras/images/healthy-pizza.png?raw=true"
     }
   ],
   "restaurants": [
@@ -21,32 +21,12 @@
       "name": "BigMenu",
       "prices": "Best",
       "rating": 5,
-      "imageUrl": "https://github.com/landrzejewski/best-food-swiftui/blob/main/extras/images/healthy-pizza.png?raw=true"
+      "imageUrl": "https://github.com/landrzejewski/ios-good-weather/blob/main/extras/images/healthy-pizza.png?raw=true"
     }
   ],
   "auth": {
     "access_token": "123"
   },
   "orders": [
-    {
-      "entries": [
-        {
-          "id": 1,
-          "name": "Asparagus steak",
-          "price": 120.5
-        }
-      ],
-      "id": 1
-    },
-    {
-      "entries": [
-        {
-          "id": 2,
-          "name": "Healthy pizza",
-          "price": 90
-        }
-      ],
-      "id": 2
-    }
   ]
 }
