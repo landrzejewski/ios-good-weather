@@ -46,6 +46,7 @@ struct ProfileView: View {
                     .foregroundColor(.white)
                     .background(Color.accentColor)
             }
+            .cornerRadius(8)
             Spacer()
         }
     }
