@@ -7,9 +7,13 @@
 
 import Foundation
 
-final class ForecastRouter: ObservableObject {
+final class ForecastRouter: ObservableObject, Equatable {
     
     @Published
     var route = ForecastRoute.forecast
     
+    static func == (lhs: ForecastRouter, rhs: ForecastRouter) -> Bool {
+        return lhs.route == rhs.route
+    }
+
 }

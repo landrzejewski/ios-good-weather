@@ -21,45 +21,41 @@ struct ForecastView: View {
     private var storedCityName = ""
     
     var body: some View {
-        ZStack {
-            LinearGradient(colors: [.primaryColor, .secondaryColor], startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.all)
-            VStack {
-                HStack {
-                    Image(systemName: "location")
-                        .templateStyle(width: 20, height: 20)
-                        .onTapGesture { viewModel.refreshForecastForCurrentLocation() }
-                    Spacer()
-                    Image(systemName: "slider.horizontal.3")
-                        .templateStyle(width: 20, height: 20)
-                        .onTapGesture { showSettings = true }
-                }
-                .padding()
-                Text(viewModel.cityName)
+        VStack {
+            HStack {
+                Image(systemName: "location")
+                    .templateStyle(width: 20, height: 20)
+                    .onTapGesture { viewModel.refreshForecastForCurrentLocation() }
+                Spacer()
+                Image(systemName: "slider.horizontal.3")
+                    .templateStyle(width: 20, height: 20)
+                    .onTapGesture { showSettings = true }
+            }
+            .padding()
+            Text(viewModel.cityName)
+                .defaultStyle(size: 32)
+            Spacer()
+            if let currentForecast = viewModel.currentForecast {
+                Image(systemName: currentForecast.icon)
+                    .iconStyle(width: 200, height: 200)
+                Text(currentForecast.description)
                     .defaultStyle(size: 32)
-                Spacer()
-                if let currentForecast = viewModel.currentForecast {
-                    Image(systemName: currentForecast.icon)
-                        .iconStyle(width: 200, height: 200)
-                    Text(currentForecast.description)
+                    .padding(.bottom, 48)
+                HStack(spacing: 48) {
+                    Text(currentForecast.temperature)
                         .defaultStyle(size: 32)
-                        .padding(.bottom, 48)
-                    HStack(spacing: 48) {
-                        Text(currentForecast.temperature)
-                            .defaultStyle(size: 32)
-                        Text(currentForecast.pressure)
-                            .defaultStyle(size: 32)
-                    }
+                    Text(currentForecast.pressure)
+                        .defaultStyle(size: 32)
                 }
-                Spacer()
-                HStack(spacing: 16) {
-                    ForEach(viewModel.nextDaysForecast, id: \.id) { dayForecastViewModel in
-                        DayForecastView(viewModel: dayForecastViewModel)
-                            .onTapGesture { router.route = .forecastDetails(dayForecastViewModel) }
-                    }
+            }
+            Spacer()
+            HStack(spacing: 16) {
+                ForEach(viewModel.nextDaysForecast, id: \.id) { dayForecastViewModel in
+                    DayForecastView(viewModel: dayForecastViewModel)
+                        .onTapGesture { router.route = .forecastDetails(dayForecastViewModel) }
                 }
-                Spacer()
-             }
+            }
+            Spacer()
         }
         .sheet(isPresented: $showSettings) { ForecastSettingsView() }
         .onChange(of: storedCityName, perform: viewModel.refreshForecast(for:))
@@ -74,7 +70,7 @@ struct ForecastView: View {
         .alert(isPresented: $viewModel.errors) {
             Alert(title: Text("Alert"), message: Text("Weather refresh failed"), dismissButton: .default(Text("Close")))
         }
-     }
+    }
 }
 
 //struct ForecastView_Previews: PreviewProvider {

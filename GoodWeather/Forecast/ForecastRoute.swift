@@ -7,9 +7,20 @@
 
 import Foundation
 
-enum ForecastRoute {
-    
+enum ForecastRoute: Equatable {
+
     case forecast
     case forecastDetails(DayForecastViewModel)
+
+    static func == (lhs: ForecastRoute, rhs: ForecastRoute) -> Bool {
+        switch (lhs, rhs) {
+        case (.forecast, .forecast):
+            return true
+        case (.forecastDetails(_), .forecastDetails(_)):
+            return true
+        default:
+            return false
+        }
+    }
     
 }
