@@ -9,28 +9,62 @@ import XCTest
 @testable import GoodWeather
 
 class GoodWeatherTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    private var calculator: Calculator!
+    
+    override func setUp() {
+        calculator = Calculator()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_given_two_numbers_when_add_then_returns_their_sum() throws {
+        // Given/Arrange
+        let firstNumber = 1.0
+        let secondNumber = 2.0
+        // When/Act
+        let result = calculator.add(firstNumber: firstNumber, secondNumber: secondNumber)
+        // Then/Assert
+        XCTAssertEqual(3.0, result)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_given_divisor_equals_zero_when_divide_then_throws_exception() {
+        XCTAssertThrowsError(try calculator.divide(firstNumber: 3.0, secondNumber: 0))
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_when_get_random_prime_then_returns_prime_number() throws {
+        /*let expectation = expectation(description: "Prime number is returned")
+        var result: Int?
+        calculator.getRandomPrime {
+            result = $0
+            expectation.fulfill()
         }
+        waitForExpectations(timeout: 10)*/
+        let result = try asyncCall(calculator.getRandomPrime)
+        XCTAssertEqual(3, result)
     }
 
+//    func testPerformanceExample() throws {
+//        // This is an example of a performance test case.
+//        self.measure {
+//            // Put the code you want to measure the time of here.
+//        }
+//    }
+
+}
+
+extension XCTestCase {
+    
+    func asyncCall<Result> (_ callback: (@escaping (Result) -> ()) -> ()) throws -> Result {
+        let expectation = expectation(description: "Async task")
+        var result: Result?
+        callback() {
+            result = $0
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 10)
+        guard let unwrappedResult = result else {
+            fatalError()
+        }
+        return unwrappedResult
+    }
+    
 }

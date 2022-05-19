@@ -8,34 +8,90 @@
 import XCTest
 
 class GoodWeatherUITests: XCTestCase {
+    
+    let app = XCUIApplication()
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+           continueAfterFailure = false
+           app.launch()
+       }
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+       override func tearDownWithError() throws {
+           app.uninstall()
+       }
+    
+    
+    func testRefteshForecastForCity() throws {
+        let city = "Berlin"
+        app.images["settings"].tap()
+        let cityTextField = app.textFields.firstMatch
+        cityTextField.clear()
+        cityTextField.typeText(city)
+        app.buttons["close"].tap()
+        sleep(3)
+        XCTAssertEqual(city, app.staticTexts["city"].label)
+      
     }
+    
+}
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+extension XCUIElement {
+    
+    func clear() {
+        guard let value = self.value as? String else {
+            return
+        }
+        tap()
+        let deleteString = String(repeating: XCUIKeyboardKey.delete.rawValue, count: value.count)
+        typeText(deleteString)
     }
+    
+}
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
+extension XCUIApplication {
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func uninstall(name: String? = nil) {
+        self.terminate()
+        
+        let timeout = TimeInterval(5)
+        let springboard = XCUIApplication(bundleIdentifier: "Inbright--ukasz-Andrzejewski.GoodWeather")
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
+        let appName: String
+        if let name = name {
+            appName = name
+        } else {
+            let uiTestRunnerName = Bundle.main.infoDictionary?["CFBundleName"] as! String
+            appName = uiTestRunnerName.replacingOccurrences(of: "UITests-Runner", with: "")
+        }
+
+        /// use `firstMatch` because icon may appear in iPad dock
+        let appIcon = springboard.icons[appName].firstMatch
+        if appIcon.waitForExistence(timeout: timeout) {
+            appIcon.press(forDuration: 2)
+        } else {
+            XCTFail("Failed to find app icon named \(appName)")
+        }
+
+        let removeAppButton = springboard.buttons["Remove App"]
+        if removeAppButton.waitForExistence(timeout: timeout) {
+            removeAppButton.tap()
+        } else {
+            XCTFail("Failed to find 'Remove App'")
+        }
+
+        let deleteAppButton = springboard.alerts.buttons["Delete App"]
+        if deleteAppButton.waitForExistence(timeout: timeout) {
+            deleteAppButton.tap()
+        } else {
+            XCTFail("Failed to find 'Delete App'")
+        }
+
+        let finalDeleteButton = springboard.alerts.buttons["Delete"]
+        if finalDeleteButton.waitForExistence(timeout: timeout) {
+            finalDeleteButton.tap()
+        } else {
+            XCTFail("Failed to find 'Delete'")
         }
     }
+    
 }
