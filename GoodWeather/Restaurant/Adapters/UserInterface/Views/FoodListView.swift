@@ -11,6 +11,9 @@ struct FoodListView: View {
     
     @ObservedObject
     var viewModel: FoodListViewModel
+    @State
+    private var navigate = false
+    
     
     var body: some View {
         NavigationView {
@@ -32,6 +35,14 @@ struct FoodListView: View {
                 }
                 if let foodViewModel = viewModel.selectedFood, viewModel.showDetails {
                     FoodDetailsView(isVisible: $viewModel.showDetails, viewModel: foodViewModel)
+                }
+                NavigationLink(destination: Text("cart"), isActive: $navigate, label: {})
+            }
+            .toolbar {
+                ToolbarItem {
+                    Button(action: { navigate = true}) {
+                        Image(systemName: "cart")
+                    }
                 }
             }
             .navigationTitle("Food")

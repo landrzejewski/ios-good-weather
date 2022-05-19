@@ -46,7 +46,7 @@ struct FoodDetailsView: View {
         .border(Color.white, width: 1)
         .clipped()
         .shadow(radius: 10)
-        .overlay(Button { isVisible = false } label: {
+        .overlay(Button(action: { isVisible = false }) {
             ZStack {
                 Circle()
                     .frame(width: 30, height: 30)

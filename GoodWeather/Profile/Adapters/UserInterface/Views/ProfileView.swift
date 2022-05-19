@@ -41,7 +41,7 @@ struct ProfileView: View {
                         }
                     }
                 }
-                Button { viewModel.save() } label: {
+                Button(action: { viewModel.save() }) {
                     Text("Save")
                         .frame(width: 200, height: 40)
                         .foregroundColor(.white)
