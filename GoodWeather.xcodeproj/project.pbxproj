@@ -30,6 +30,9 @@
 		B204397C28353A1000429E20 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204397B28353A1000429E20 /* LoginViewModel.swift */; };
 		B204397E28353AA600429E20 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204397D28353AA600429E20 /* LoginView.swift */; };
 		B204398028353BAB00429E20 /* SecurityResolver+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204397F28353BAB00429E20 /* SecurityResolver+ext.swift */; };
+		B294F973283623C400D12101 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294F972283623C400D12101 /* OrderViewModel.swift */; };
+		B294F9752836240500D12101 /* OrderEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294F9742836240500D12101 /* OrderEntryViewModel.swift */; };
+		B294F9772836247100D12101 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294F9762836247100D12101 /* OrderView.swift */; };
 		DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */; };
 		DF26CEE22832402D00B0F60B /* ForecastRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */; };
 		DF26CEE42832402E00B0F60B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF26CEE32832402E00B0F60B /* Assets.xcassets */; };
@@ -136,6 +139,9 @@
 		B204397B28353A1000429E20 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B204397D28353AA600429E20 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B204397F28353BAB00429E20 /* SecurityResolver+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecurityResolver+ext.swift"; sourceTree = "<group>"; };
+		B294F972283623C400D12101 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		B294F9742836240500D12101 /* OrderEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntryViewModel.swift; sourceTree = "<group>"; };
+		B294F9762836247100D12101 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		DF26CEDC2832402D00B0F60B /* GoodWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWeatherApp.swift; sourceTree = "<group>"; };
 		DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRouterView.swift; sourceTree = "<group>"; };
@@ -342,6 +348,7 @@
 				B204396C283519AB00429E20 /* FoodListView.swift */,
 				B204396A2835172D00429E20 /* FoodView.swift */,
 				B20439742835221C00429E20 /* FoodDetailsView.swift */,
+				B294F9762836247100D12101 /* OrderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -351,6 +358,8 @@
 			children = (
 				B204396E28351AAA00429E20 /* FoodViewModel.swift */,
 				B204397028351B0400429E20 /* FoodListViewModel.swift */,
+				B294F972283623C400D12101 /* OrderViewModel.swift */,
+				B294F9742836240500D12101 /* OrderEntryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -818,6 +827,7 @@
 				B204396B2835172D00429E20 /* FoodView.swift in Sources */,
 				B204394C2834F54F00429E20 /* Profile.swift in Sources */,
 				DF61FDDD2833E2C90018C770 /* ForecastProviderLoggerProxy.swift in Sources */,
+				B294F973283623C400D12101 /* OrderViewModel.swift in Sources */,
 				DF26CF66283293EF00B0F60B /* URLSessionForecastProviderMapper.swift in Sources */,
 				DF61FDE22833E4560018C770 /* LoggingLevel.swift in Sources */,
 				DF26CF53283283ED00B0F60B /* ForecastSettingsView.swift in Sources */,
@@ -831,6 +841,7 @@
 				DF26CF422832605600B0F60B /* Color+ext.swift in Sources */,
 				DF26CF602832928000B0F60B /* ForecastDto.swift in Sources */,
 				DF61FD482833996A0018C770 /* Resolver+ext.swift in Sources */,
+				B294F9772836247100D12101 /* OrderView.swift in Sources */,
 				DF26CF5A2832916F00B0F60B /* ConditionsDto.swift in Sources */,
 				DF26CF4D28327A3B00B0F60B /* DayForecastView.swift in Sources */,
 				DF26CF472832644900B0F60B /* Text+ext.swift in Sources */,
@@ -851,6 +862,7 @@
 				B204397E28353AA600429E20 /* LoginView.swift in Sources */,
 				DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */,
 				DF26CF1A2832465700B0F60B /* ForecastProviderError.swift in Sources */,
+				B294F9752836240500D12101 /* OrderEntryViewModel.swift in Sources */,
 				DF26CF242832494200B0F60B /* GetForecastService.swift in Sources */,
 				B204396D283519AB00429E20 /* FoodListView.swift in Sources */,
 				DF26CF492832651A00B0F60B /* View+ext.swift in Sources */,

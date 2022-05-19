@@ -36,7 +36,7 @@ struct FoodListView: View {
                 if let foodViewModel = viewModel.selectedFood, viewModel.showDetails {
                     FoodDetailsView(isVisible: $viewModel.showDetails, viewModel: foodViewModel)
                 }
-                NavigationLink(destination: Text("cart"), isActive: $navigate, label: {})
+                NavigationLink(destination: OrderView(viewModel: OrderViewModel()), isActive: $navigate, label: {})
             }
             .toolbar {
                 ToolbarItem {
