@@ -33,6 +33,11 @@
 		B294F973283623C400D12101 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294F972283623C400D12101 /* OrderViewModel.swift */; };
 		B294F9752836240500D12101 /* OrderEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294F9742836240500D12101 /* OrderEntryViewModel.swift */; };
 		B294F9772836247100D12101 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294F9762836247100D12101 /* OrderView.swift */; };
+		B294F97A2836296E00D12101 /* BasicAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294F9792836296E00D12101 /* BasicAnimations.swift */; };
+		B294F97C2836345000D12101 /* ButtonsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294F97B2836345000D12101 /* ButtonsAnimation.swift */; };
+		B294F97E283637D900D12101 /* SegmentedViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294F97D283637D900D12101 /* SegmentedViewAnimation.swift */; };
+		B294F98028363B4100D12101 /* BottomMenuAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294F97F28363B4100D12101 /* BottomMenuAnimation.swift */; };
+		B294F98228363EFB00D12101 /* ScrollAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294F98128363EFB00D12101 /* ScrollAnimation.swift */; };
 		DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */; };
 		DF26CEE22832402D00B0F60B /* ForecastRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */; };
 		DF26CEE42832402E00B0F60B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF26CEE32832402E00B0F60B /* Assets.xcassets */; };
@@ -142,6 +147,11 @@
 		B294F972283623C400D12101 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		B294F9742836240500D12101 /* OrderEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntryViewModel.swift; sourceTree = "<group>"; };
 		B294F9762836247100D12101 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		B294F9792836296E00D12101 /* BasicAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAnimations.swift; sourceTree = "<group>"; };
+		B294F97B2836345000D12101 /* ButtonsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsAnimation.swift; sourceTree = "<group>"; };
+		B294F97D283637D900D12101 /* SegmentedViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedViewAnimation.swift; sourceTree = "<group>"; };
+		B294F97F28363B4100D12101 /* BottomMenuAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuAnimation.swift; sourceTree = "<group>"; };
+		B294F98128363EFB00D12101 /* ScrollAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollAnimation.swift; sourceTree = "<group>"; };
 		DF26CEDC2832402D00B0F60B /* GoodWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF26CEDF2832402D00B0F60B /* GoodWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWeatherApp.swift; sourceTree = "<group>"; };
 		DF26CEE12832402D00B0F60B /* ForecastRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRouterView.swift; sourceTree = "<group>"; };
@@ -406,6 +416,18 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		B294F9782836293800D12101 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				B294F9792836296E00D12101 /* BasicAnimations.swift */,
+				B294F97B2836345000D12101 /* ButtonsAnimation.swift */,
+				B294F97D283637D900D12101 /* SegmentedViewAnimation.swift */,
+				B294F97F28363B4100D12101 /* BottomMenuAnimation.swift */,
+				B294F98128363EFB00D12101 /* ScrollAnimation.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		DF26CED32832402D00B0F60B = {
 			isa = PBXGroup;
 			children = (
@@ -625,6 +647,7 @@
 		DF26CF452832636400B0F60B /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				B294F9782836293800D12101 /* Animations */,
 				B204395528350BA000429E20 /* ActivityIndicatorView.swift */,
 				B204395628350BA000429E20 /* EmptyView.swift */,
 				B204395A28350BA000429E20 /* LoadingView.swift */,
@@ -825,7 +848,9 @@
 				DF26CEE22832402D00B0F60B /* ForecastRouterView.swift in Sources */,
 				DF61FDBF2833CF230018C770 /* CoreDataForecastRepositoryAdapter.swift in Sources */,
 				B204396B2835172D00429E20 /* FoodView.swift in Sources */,
+				B294F98228363EFB00D12101 /* ScrollAnimation.swift in Sources */,
 				B204394C2834F54F00429E20 /* Profile.swift in Sources */,
+				B294F98028363B4100D12101 /* BottomMenuAnimation.swift in Sources */,
 				DF61FDDD2833E2C90018C770 /* ForecastProviderLoggerProxy.swift in Sources */,
 				B294F973283623C400D12101 /* OrderViewModel.swift in Sources */,
 				DF26CF66283293EF00B0F60B /* URLSessionForecastProviderMapper.swift in Sources */,
@@ -833,6 +858,7 @@
 				DF26CF53283283ED00B0F60B /* ForecastSettingsView.swift in Sources */,
 				DF61FDBD2833CEE20018C770 /* CoreDataForecastRepository.swift in Sources */,
 				DF61FDA32833CA800018C770 /* ForecastModel.xcdatamodeld in Sources */,
+				B294F97E283637D900D12101 /* SegmentedViewAnimation.swift in Sources */,
 				DF61FD4E2833A4850018C770 /* UserProperty.swift in Sources */,
 				B204397C28353A1000429E20 /* LoginViewModel.swift in Sources */,
 				B20439502834F64F00429E20 /* ProfileEventBus.swift in Sources */,
@@ -840,6 +866,7 @@
 				DF26CF5128327F3A00B0F60B /* ForecastRoute.swift in Sources */,
 				DF26CF422832605600B0F60B /* Color+ext.swift in Sources */,
 				DF26CF602832928000B0F60B /* ForecastDto.swift in Sources */,
+				B294F97C2836345000D12101 /* ButtonsAnimation.swift in Sources */,
 				DF61FD482833996A0018C770 /* Resolver+ext.swift in Sources */,
 				B294F9772836247100D12101 /* OrderView.swift in Sources */,
 				DF26CF5A2832916F00B0F60B /* ConditionsDto.swift in Sources */,
@@ -862,6 +889,7 @@
 				B204397E28353AA600429E20 /* LoginView.swift in Sources */,
 				DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */,
 				DF26CF1A2832465700B0F60B /* ForecastProviderError.swift in Sources */,
+				B294F97A2836296E00D12101 /* BasicAnimations.swift in Sources */,
 				B294F9752836240500D12101 /* OrderEntryViewModel.swift in Sources */,
 				DF26CF242832494200B0F60B /* GetForecastService.swift in Sources */,
 				B204396D283519AB00429E20 /* FoodListView.swift in Sources */,

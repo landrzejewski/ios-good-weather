@@ -15,7 +15,6 @@ struct GoodWeatherApp: App {
         UITabBar.appearance().unselectedItemTintColor = .lightGray
     }
     
-    
     @Injected
     var foodListViewModel: FoodListViewModel
     @Injected
