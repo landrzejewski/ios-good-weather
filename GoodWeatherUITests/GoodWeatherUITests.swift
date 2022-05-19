@@ -30,7 +30,22 @@ class GoodWeatherUITests: XCTestCase {
         app.buttons["close"].tap()
         sleep(3)
         XCTAssertEqual(city, app.staticTexts["city"].label)
-      
+    }
+    
+    func testRefreshForecastForLocation() {
+        let locationButton = app.images["location"]
+        locationButton.tap()
+        allowLocationUpdates()
+        locationButton.tap()
+        sleep(3)
+        XCTAssertEqual("Cupertino", app.staticTexts["city"].label)
+    }
+    
+    private func allowLocationUpdates() {
+        let app = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        let button = app.alerts.firstMatch.buttons["Pozwalaj, gdy używam aplikacji"]
+        _ = button.waitForExistence(timeout: 100)
+        button.tap()
     }
     
 }
@@ -54,7 +69,7 @@ extension XCUIApplication {
         self.terminate()
         
         let timeout = TimeInterval(5)
-        let springboard = XCUIApplication(bundleIdentifier: "Inbright--ukasz-Andrzejewski.GoodWeather")
+        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
 
         let appName: String
         if let name = name {
@@ -71,22 +86,22 @@ extension XCUIApplication {
         } else {
             XCTFail("Failed to find app icon named \(appName)")
         }
-
-        let removeAppButton = springboard.buttons["Remove App"]
+        
+        let removeAppButton = springboard.buttons["Usuń aplikację"]
         if removeAppButton.waitForExistence(timeout: timeout) {
             removeAppButton.tap()
         } else {
             XCTFail("Failed to find 'Remove App'")
         }
 
-        let deleteAppButton = springboard.alerts.buttons["Delete App"]
+        let deleteAppButton = springboard.alerts.buttons["Usuń aplikację"]
         if deleteAppButton.waitForExistence(timeout: timeout) {
             deleteAppButton.tap()
         } else {
             XCTFail("Failed to find 'Delete App'")
         }
 
-        let finalDeleteButton = springboard.alerts.buttons["Delete"]
+        let finalDeleteButton = springboard.alerts.buttons["Usuń"]
         if finalDeleteButton.waitForExistence(timeout: timeout) {
             finalDeleteButton.tap()
         } else {

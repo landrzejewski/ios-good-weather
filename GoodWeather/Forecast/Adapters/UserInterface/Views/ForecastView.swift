@@ -26,6 +26,7 @@ struct ForecastView: View {
                 Image(systemName: "location")
                     .templateStyle(width: 20, height: 20)
                     .onTapGesture { viewModel.refreshForecastForCurrentLocation() }
+                    .accessibility(identifier: "location")
                 Spacer()
                 Image(systemName: "slider.horizontal.3")
                     .templateStyle(width: 20, height: 20)
