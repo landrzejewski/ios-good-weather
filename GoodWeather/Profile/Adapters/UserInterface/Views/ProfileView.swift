@@ -11,15 +11,16 @@ struct ProfileView: View {
     
     @ObservedObject
     var viewModel: ProfileViewModel
+    var email = "email"
     
     var body: some View {
         NavigationView {
             VStack {
                 Form {
                     Section(header: Text("Personal info")) {
-                        TextField("First name", text: $viewModel.firstName)
-                        TextField("Last name", text: $viewModel.lastName)
-                        TextField("Email", text: $viewModel.email)
+                        TextField("first-name", text: $viewModel.firstName)
+                        TextField(LocalizedStringKey("last-name"), text: $viewModel.lastName)
+                        TextField("\(email) address", text: $viewModel.email)
                             .keyboardType(.emailAddress)
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
