@@ -61,6 +61,7 @@ struct ForecastView: View {
             Spacer()
         }
         .sheet(isPresented: $showSettings) { ForecastSettingsView() }
+        .onAppear { viewModel.refreshForecast() }
         .onChange(of: storedCityName, perform: viewModel.refreshForecast(for:))
         .onChange(of: scenePhase) { phase in
             switch phase {
