@@ -16,11 +16,11 @@ struct GoodWeatherApp: App {
     }
     
     @Injected
+    var loginViewModel: LoginViewModel
+    @Injected
     var foodListViewModel: FoodListViewModel
     @Injected
     var profileViewModel: ProfileViewModel
-    @Injected
-    var loginViewModel: LoginViewModel
     
     var body: some Scene {
         WindowGroup {
