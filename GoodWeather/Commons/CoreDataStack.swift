@@ -21,13 +21,18 @@ import CoreData
 final class CoreDataStack {
     
     private let modelName: String
+    private let inMemory: Bool
     
-    init(modelName: String) {
+    init(modelName: String, inMemory: Bool = false) {
         self.modelName = modelName
+        self.inMemory = inMemory
     }
     
     lazy var pesistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: modelName)
+        if inMemory {
+            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        }
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Storage error \(error)")

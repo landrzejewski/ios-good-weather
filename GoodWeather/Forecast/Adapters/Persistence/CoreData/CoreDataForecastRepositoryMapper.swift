@@ -20,7 +20,7 @@ final class CoreDataForecastRepositoryMapper {
         let temperature = dayForecastEntity.temperature
         let pressure = dayForecastEntity.pressure
         let icon = dayForecastEntity.imageName
-        let description = dayForecastEntity.conditions
+        let description = dayForecastEntity.weather
         return DayForecast(id: id, date: date, temperature: temperature, pressure: pressure, icon: icon, description: description)
     }
     
@@ -39,7 +39,7 @@ final class CoreDataForecastRepositoryMapper {
         dayForecastEnity.date = dayForecast.date
         dayForecastEnity.temperature = dayForecast.temperature
         dayForecastEnity.pressure = dayForecast.pressure
-        dayForecastEnity.conditions = dayForecast.description
+        dayForecastEnity.weather = dayForecast.description
         dayForecastEnity.imageName = dayForecast.icon
         return dayForecastEnity
     }
