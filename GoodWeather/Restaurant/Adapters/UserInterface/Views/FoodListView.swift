@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FoodListView: View {
     
-    @ObservedObject
+    @InjectedObservedObject
     var viewModel: FoodListViewModel
     @State
     private var navigate = false
@@ -53,7 +53,7 @@ struct FoodListView: View {
 
 struct FoodListView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodListView(viewModel: FoodListViewModel())
+        FoodListView()
     }
 }
 

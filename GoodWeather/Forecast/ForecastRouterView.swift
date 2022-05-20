@@ -13,7 +13,6 @@ struct ForecastRouterView: View {
     
     @EnvironmentObject
     private var router: ForecastRouter
-    
     @Injected
     private var viewModel: ForecastViewModel
     

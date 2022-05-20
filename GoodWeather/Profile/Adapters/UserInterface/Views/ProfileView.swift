@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    @ObservedObject
+    @InjectedObservedObject
     var viewModel: ProfileViewModel
     var email = "email"
     
@@ -59,6 +59,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(viewModel: ProfileViewModel())
+        ProfileView()
     }
 }

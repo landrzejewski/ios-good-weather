@@ -15,35 +15,34 @@ struct GoodWeatherApp: App {
         UITabBar.appearance().unselectedItemTintColor = .lightGray
     }
     
-    @Injected
+    @InjectedObservedObject
     var loginViewModel: LoginViewModel
-    @Injected
-    var foodListViewModel: FoodListViewModel
-    @Injected
-    var profileViewModel: ProfileViewModel
     
     var body: some Scene {
         WindowGroup {
-            LoginView(viewModel: loginViewModel)
-//            TabView {
-//                ForecastRouterView()
-//                    .environmentObject(ForecastRouter())
-//                    .tabItem {
-//                        Image(systemName: "sun.max.fill")
-//                        Text("Forecast")
-//                    }
-//                FoodListView(viewModel: foodListViewModel)
-//                    .tabItem {
-//                        Image(systemName: "list.dash")
-//                        Text("Menu")
-//                    }
-//                ProfileView(viewModel: profileViewModel)
-//                    .tabItem {
-//                        Image(systemName: "person")
-//                        Text("Profile")
-//                    }
-//            }
-//            .accentColor(.accentColor)
+            if loginViewModel.isAuthenticated {
+                TabView {
+                    ForecastRouterView()
+                        .environmentObject(ForecastRouter())
+                        .tabItem {
+                            Image(systemName: "sun.max.fill")
+                            Text("Forecast")
+                        }
+                    FoodListView()
+                        .tabItem {
+                            Image(systemName: "list.dash")
+                            Text("Menu")
+                        }
+                    ProfileView()
+                        .tabItem {
+                            Image(systemName: "person")
+                            Text("Profile")
+                        }
+                }
+                .accentColor(.accentColor)
+            } else {
+                LoginView(viewModel: loginViewModel)
+            }
         }
     }
 }

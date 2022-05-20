@@ -112,6 +112,17 @@
 		DF94823928379F6A00CD59CA /* PaymentProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94823828379F6A00CD59CA /* PaymentProperties.swift */; };
 		DF94823C2837A00800CD59CA /* PaymentPropertiesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94823B2837A00800CD59CA /* PaymentPropertiesProvider.swift */; };
 		DF94823F2837A06F00CD59CA /* LocalPaymentPropertiesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94823E2837A06F00CD59CA /* LocalPaymentPropertiesProvider.swift */; };
+		DF9482432837B92200CD59CA /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9482422837B92200CD59CA /* AuthenticationProvider.swift */; };
+		DF9482462837B98700CD59CA /* URLSessionAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9482452837B98700CD59CA /* URLSessionAuthenticationProvider.swift */; };
+		DF9482492837B9EF00CD59CA /* CredentialsDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9482482837B9EF00CD59CA /* CredentialsDto.swift */; };
+		DF94824B2837BA1B00CD59CA /* AuthenticationDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94824A2837BA1B00CD59CA /* AuthenticationDto.swift */; };
+		DF94824D2837BAE400CD59CA /* URLSessionAuthenticationProviderMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94824C2837BAE400CD59CA /* URLSessionAuthenticationProviderMapper.swift */; };
+		DF94824F2837BB9800CD59CA /* URLSessionAuthenticationProviderAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94824E2837BB9800CD59CA /* URLSessionAuthenticationProviderAdapter.swift */; };
+		DF9482512837BC7000CD59CA /* AuthenticationProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9482502837BC7000CD59CA /* AuthenticationProviderError.swift */; };
+		DF9482542837BCFC00CD59CA /* AuthenticationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9482532837BCFC00CD59CA /* AuthenticationUseCase.swift */; };
+		DF9482562837BD5200CD59CA /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9482552837BD5200CD59CA /* AuthenticationError.swift */; };
+		DF9482582837BD9400CD59CA /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9482572837BD9400CD59CA /* AuthenticationService.swift */; };
+		DF94825A2837C2C200CD59CA /* InjectedObservedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9482592837C2C200CD59CA /* InjectedObservedObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,6 +252,17 @@
 		DF94823828379F6A00CD59CA /* PaymentProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProperties.swift; sourceTree = SOURCE_ROOT; };
 		DF94823B2837A00800CD59CA /* PaymentPropertiesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPropertiesProvider.swift; sourceTree = "<group>"; };
 		DF94823E2837A06F00CD59CA /* LocalPaymentPropertiesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPaymentPropertiesProvider.swift; sourceTree = "<group>"; };
+		DF9482422837B92200CD59CA /* AuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
+		DF9482452837B98700CD59CA /* URLSessionAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAuthenticationProvider.swift; sourceTree = "<group>"; };
+		DF9482482837B9EF00CD59CA /* CredentialsDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsDto.swift; sourceTree = "<group>"; };
+		DF94824A2837BA1B00CD59CA /* AuthenticationDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDto.swift; sourceTree = "<group>"; };
+		DF94824C2837BAE400CD59CA /* URLSessionAuthenticationProviderMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAuthenticationProviderMapper.swift; sourceTree = "<group>"; };
+		DF94824E2837BB9800CD59CA /* URLSessionAuthenticationProviderAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAuthenticationProviderAdapter.swift; sourceTree = "<group>"; };
+		DF9482502837BC7000CD59CA /* AuthenticationProviderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProviderError.swift; sourceTree = "<group>"; };
+		DF9482532837BCFC00CD59CA /* AuthenticationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUseCase.swift; sourceTree = "<group>"; };
+		DF9482552837BD5200CD59CA /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
+		DF9482572837BD9400CD59CA /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		DF9482592837C2C200CD59CA /* InjectedObservedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectedObservedObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,6 +425,8 @@
 			isa = PBXGroup;
 			children = (
 				B2043977283539C400429E20 /* Adapters */,
+				DF9482402837B8F000CD59CA /* Ports */,
+				DF9482412837B8F900CD59CA /* Domain */,
 				B204397F28353BAB00429E20 /* SecurityResolver+ext.swift */,
 			);
 			path = Security;
@@ -412,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				B2043978283539D300429E20 /* UserInterface */,
+				DF9482472837B98E00CD59CA /* AuthenticationProvider */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -672,6 +697,7 @@
 				DF61FD9F2833C6B30018C770 /* CoreDataStack.swift */,
 				B294F985283669EB00D12101 /* Calculator.swift */,
 				B294F9892836738300D12101 /* Template.swift */,
+				DF9482592837C2C200CD59CA /* InjectedObservedObject.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -758,6 +784,53 @@
 				DF94823E2837A06F00CD59CA /* LocalPaymentPropertiesProvider.swift */,
 			);
 			path = PaymentPropertiesProvider;
+			sourceTree = "<group>";
+		};
+		DF9482402837B8F000CD59CA /* Ports */ = {
+			isa = PBXGroup;
+			children = (
+				DF9482442837B96100CD59CA /* AuthenticationProvider */,
+				DF9482522837BCCA00CD59CA /* UseCases */,
+			);
+			path = Ports;
+			sourceTree = "<group>";
+		};
+		DF9482412837B8F900CD59CA /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				DF9482572837BD9400CD59CA /* AuthenticationService.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		DF9482442837B96100CD59CA /* AuthenticationProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DF9482422837B92200CD59CA /* AuthenticationProvider.swift */,
+				DF9482502837BC7000CD59CA /* AuthenticationProviderError.swift */,
+			);
+			path = AuthenticationProvider;
+			sourceTree = "<group>";
+		};
+		DF9482472837B98E00CD59CA /* AuthenticationProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DF9482482837B9EF00CD59CA /* CredentialsDto.swift */,
+				DF94824A2837BA1B00CD59CA /* AuthenticationDto.swift */,
+				DF9482452837B98700CD59CA /* URLSessionAuthenticationProvider.swift */,
+				DF94824C2837BAE400CD59CA /* URLSessionAuthenticationProviderMapper.swift */,
+				DF94824E2837BB9800CD59CA /* URLSessionAuthenticationProviderAdapter.swift */,
+			);
+			path = AuthenticationProvider;
+			sourceTree = "<group>";
+		};
+		DF9482522837BCCA00CD59CA /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DF9482532837BCFC00CD59CA /* AuthenticationUseCase.swift */,
+				DF9482552837BD5200CD59CA /* AuthenticationError.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -919,6 +992,7 @@
 				DF61FDA32833CA800018C770 /* ForecastModel.xcdatamodeld in Sources */,
 				B294F97E283637D900D12101 /* SegmentedViewAnimation.swift in Sources */,
 				DF61FD4E2833A4850018C770 /* UserProperty.swift in Sources */,
+				DF94824D2837BAE400CD59CA /* URLSessionAuthenticationProviderMapper.swift in Sources */,
 				B204397C28353A1000429E20 /* LoginViewModel.swift in Sources */,
 				B20439502834F64F00429E20 /* ProfileEventBus.swift in Sources */,
 				DF26CF4B2832769100B0F60B /* ForecastViewModelMapper.swift in Sources */,
@@ -926,6 +1000,7 @@
 				DF26CF422832605600B0F60B /* Color+ext.swift in Sources */,
 				DF26CF602832928000B0F60B /* ForecastDto.swift in Sources */,
 				B294F97C2836345000D12101 /* ButtonsAnimation.swift in Sources */,
+				DF9482542837BCFC00CD59CA /* AuthenticationUseCase.swift in Sources */,
 				DF61FD482833996A0018C770 /* Resolver+ext.swift in Sources */,
 				B294F9772836247100D12101 /* OrderView.swift in Sources */,
 				DF26CF5A2832916F00B0F60B /* ConditionsDto.swift in Sources */,
@@ -935,10 +1010,13 @@
 				DF26CF6A28329DBF00B0F60B /* UI+ext.swift in Sources */,
 				B204398028353BAB00429E20 /* SecurityResolver+ext.swift in Sources */,
 				B294F986283669EB00D12101 /* Calculator.swift in Sources */,
+				DF9482432837B92200CD59CA /* AuthenticationProvider.swift in Sources */,
 				B204394A2834EBD600429E20 /* ProfileView.swift in Sources */,
+				DF9482562837BD5200CD59CA /* AuthenticationError.swift in Sources */,
 				B204395C28350BA100429E20 /* EmptyView.swift in Sources */,
 				DF61FDD92833DA710018C770 /* CityEntity+CoreDataProperties.swift in Sources */,
 				B204397328351D2E00429E20 /* RestaurantResolver+ext.swift in Sources */,
+				DF94824F2837BB9800CD59CA /* URLSessionAuthenticationProviderAdapter.swift in Sources */,
 				DF26CF58283290FF00B0F60B /* CityDto.swift in Sources */,
 				B20439542835094500429E20 /* Validators.swift in Sources */,
 				DF26CF272832521100B0F60B /* FakeForecastProvider.swift in Sources */,
@@ -959,11 +1037,13 @@
 				DF26CF11283243F800B0F60B /* GetForecastError.swift in Sources */,
 				DF26CF3B283258EC00B0F60B /* ForecastViewModel.swift in Sources */,
 				DF26CF622832931800B0F60B /* URLSessionForecastProvider.swift in Sources */,
+				DF9482462837B98700CD59CA /* URLSessionAuthenticationProvider.swift in Sources */,
 				B294F9842836673500D12101 /* MatchedGeometryEffectAnimation.swift in Sources */,
 				B204396F28351AAA00429E20 /* FoodViewModel.swift in Sources */,
 				DF26CF18283245DD00B0F60B /* ForecastProvider.swift in Sources */,
 				B20439432834EAF200429E20 /* ProfileResolver+ext.swift in Sources */,
 				DF26CF642832935800B0F60B /* URLSessionForecastProviderAdapter.swift in Sources */,
+				DF9482582837BD9400CD59CA /* AuthenticationService.swift in Sources */,
 				B204396228350BAE00429E20 /* URLSession+ext.swift in Sources */,
 				DF26CF552832863A00B0F60B /* DefaultButtonStyle.swift in Sources */,
 				B204394E2834F5AC00429E20 /* UserCard.swift in Sources */,
@@ -971,6 +1051,7 @@
 				DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */,
 				DF26CF222832486E00B0F60B /* LocationProvider.swift in Sources */,
 				DF26CF5E283291CE00B0F60B /* DayForecastDto.swift in Sources */,
+				DF94824B2837BA1B00CD59CA /* AuthenticationDto.swift in Sources */,
 				DF61FDE02833E4360018C770 /* Logger.swift in Sources */,
 				DF61FDE42833E55A0018C770 /* ConsoleLoggger.swift in Sources */,
 				DF61FD3E283391E70018C770 /* CoreLocationProvider.swift in Sources */,
@@ -987,7 +1068,9 @@
 				DF61FDDB2833DA710018C770 /* DayForecastEntity+CoreDataProperties.swift in Sources */,
 				DF61FD3C283385690018C770 /* SqlForecastRepository.swift in Sources */,
 				B20439522834F6AB00429E20 /* FakeProfileEventBus .swift in Sources */,
+				DF9482492837B9EF00CD59CA /* CredentialsDto.swift in Sources */,
 				B204397128351B0400429E20 /* FoodListViewModel.swift in Sources */,
+				DF94825A2837C2C200CD59CA /* InjectedObservedObject.swift in Sources */,
 				DF26CF132832445A00B0F60B /* DayForecast.swift in Sources */,
 				DF94823928379F6A00CD59CA /* PaymentProperties.swift in Sources */,
 				B20439482834EB9E00429E20 /* ProfileViewModel.swift in Sources */,
@@ -996,6 +1079,7 @@
 				DF26CF3D2832594B00B0F60B /* DayForecastViewModel.swift in Sources */,
 				DF26CF0F283241E300B0F60B /* GetForecastUseCase.swift in Sources */,
 				DF26CF322832562100B0F60B /* ForecastView.swift in Sources */,
+				DF9482512837BC7000CD59CA /* AuthenticationProviderError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

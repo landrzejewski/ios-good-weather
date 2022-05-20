@@ -32,7 +32,7 @@ struct LoginView: View {
                         .foregroundColor(.red)
                 }
             }
-            Button { } label: {
+            Button { viewModel.tryLogin() } label: {
                 if (viewModel.isLoading) {
                     ActivityIndicatorView()
                 } else {
