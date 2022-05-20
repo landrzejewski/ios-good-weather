@@ -58,7 +58,7 @@ final class ProfileViewModel: ObservableObject {
         password = profile.password
         isSubscriber = profile.isSubscriber
         cardNumber = profile.card?.number ?? ""
-        cardCvv = profile.card?.number ?? ""
+        cardCvv = profile.card?.cvv ?? ""
         cardExpirationDate = profile.card?.expirationDate ?? Date()
     }
     
