@@ -24,7 +24,7 @@ struct GoodWeatherApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView(viewModel: LoginViewModel())
+            LoginView(viewModel: loginViewModel)
 //            TabView {
 //                ForecastRouterView()
 //                    .environmentObject(ForecastRouter())
