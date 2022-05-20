@@ -31,6 +31,7 @@ final class ProfileViewModel: ObservableObject {
     var cardExpirationDate = Date()
     @Published
     var errors: [String] = []
+    private var id: String = ""
     
     @Injected
     var profileEventBus: ProfileEventBus
@@ -47,18 +48,20 @@ final class ProfileViewModel: ObservableObject {
     }
     
     func save() {
-        let profile = Profile(firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, email: email, password: password, isSubscriber: isSubscriber, card: UserCard(number: cardNumber, cvv: cardCvv, expirationDate: cardExpirationDate))
+        let card = cardNumber.isEmpty ? Optional.none : UserCard(number: cardNumber, cvv: cardCvv, expirationDate: cardExpirationDate)
+        let profile = Profile(id: id, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, email: email, password: password, isSubscriber: isSubscriber, card: card)
         profileEventBus.profile.send(profile)
     }
     
     private func update(profile: Profile) {
+        id = profile.id
         firstName = profile.firstName
         lastName = profile.lastName
         email = profile.email
         password = profile.password
         isSubscriber = profile.isSubscriber
         cardNumber = profile.card?.number ?? ""
-        cardCvv = profile.card?.number ?? ""
+        cardCvv = profile.card?.cvv ?? ""
         cardExpirationDate = profile.card?.expirationDate ?? Date()
     }
     

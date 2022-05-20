@@ -13,6 +13,7 @@ extension Resolver {
     
     static func registerRestaurantComponents() {
         register { FoodListViewModel() }
+        register { LocalPaymentPropertiesProvider() as PaymentPropertiesProvider }
     }
     
 }

@@ -9,6 +9,7 @@ import Foundation
 
 struct Profile {
     
+    let id: String
     let firstName: String
     let lastName: String
     let dateOfBirth: Date

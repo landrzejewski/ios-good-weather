@@ -7,9 +7,15 @@
 
 import Foundation
 import Combine
+import Resolver
 
 final class FakeProfileEventBus : ProfileEventBus {
-   
-    var profile = CurrentValueSubject<Profile, Never>(Profile(firstName: "Jan", lastName: "Kowalski", dateOfBirth: Date(), email: "jan@training.pl", password: "123", isSubscriber: true, card: nil))
     
+    @Injected
+    var idGenerator: IdGenerator
+   
+    lazy var profile: CurrentValueSubject<Profile, Never> = {
+        CurrentValueSubject<Profile, Never>(Profile(id: idGenerator.getNext(), firstName: "Jan", lastName: "Kowalski", dateOfBirth: Date(), email: "jan@training.pl", password: "123", isSubscriber: true, card: nil))
+    }()
+
 }

@@ -33,12 +33,14 @@ struct OrderView: View {
                         .background(Color.accentColor)
                 }
                 .cornerRadius(8)
+                .disabled(!viewModel.hasPaymnetProperties)
             }
             if viewModel.orderEntries.isEmpty {
                 EmptyView(imageName: "cart", message: "Your order is empty.")
             }
         }
         .navigationTitle("Order")
+        .onAppear { viewModel.refreshPaymentsProperties() }
     }
 }
 

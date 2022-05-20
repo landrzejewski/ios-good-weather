@@ -22,6 +22,9 @@ struct LoginView: View {
             Form {
                 Section(header: Text("Credentials")) {
                     TextField("Login", text: $viewModel.login)
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .disableAutocorrection(true)
                     SecureField("Password", text: $viewModel.password)
                 }
                 if viewModel.error {
@@ -30,10 +33,14 @@ struct LoginView: View {
                 }
             }
             Button { } label: {
-                Text("Authenticate")
-                    .frame(width: 200, height: 40)
-                    .foregroundColor(.white)
-                    .background(Color.accentColor)
+                if (viewModel.isLoading) {
+                    ActivityIndicatorView()
+                } else {
+                    Text("Authenticate")
+                        .frame(width: 200, height: 40)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                }
             }
             .cornerRadius(8)
             Spacer()

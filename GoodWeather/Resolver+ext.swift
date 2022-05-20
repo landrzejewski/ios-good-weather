@@ -12,6 +12,7 @@ extension Resolver: ResolverRegistering {
     
     static func registerGlobalComponents() {
         register { ConsoleLogger() as Logger }
+        register { UuidGenerator() as IdGenerator }
     }
     
     static public func registerAllServices() {

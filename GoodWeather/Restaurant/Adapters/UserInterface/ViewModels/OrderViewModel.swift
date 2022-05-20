@@ -6,9 +6,15 @@
 //
 
 import Foundation
+import Resolver
 
 final class OrderViewModel: ObservableObject {
     
+    @Injected
+    var paymentsPropertiesprovider: PaymentPropertiesProvider
+    
+    @Published
+    var hasPaymnetProperties = false
     @Published
     var orderEntries = [
         OrderEntryViewModel(id: 1, name: "Mega burger", price: "40 zł"),
@@ -16,5 +22,9 @@ final class OrderViewModel: ObservableObject {
     ]
     @Published
     var totalPrice = "60 zł"
+    
+    func refreshPaymentsProperties() {
+        hasPaymnetProperties = paymentsPropertiesprovider.load() != nil
+    }
     
 }

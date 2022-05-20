@@ -107,6 +107,11 @@
 		DF61FDE02833E4360018C770 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDDF2833E4360018C770 /* Logger.swift */; };
 		DF61FDE22833E4560018C770 /* LoggingLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDE12833E4560018C770 /* LoggingLevel.swift */; };
 		DF61FDE42833E55A0018C770 /* ConsoleLoggger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61FDE32833E55A0018C770 /* ConsoleLoggger.swift */; };
+		DF9481F52837767600CD59CA /* IdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9481F42837767600CD59CA /* IdGenerator.swift */; };
+		DF9481F7283776BD00CD59CA /* UuidGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9481F6283776BD00CD59CA /* UuidGenerator.swift */; };
+		DF94823928379F6A00CD59CA /* PaymentProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94823828379F6A00CD59CA /* PaymentProperties.swift */; };
+		DF94823C2837A00800CD59CA /* PaymentPropertiesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94823B2837A00800CD59CA /* PaymentPropertiesProvider.swift */; };
+		DF94823F2837A06F00CD59CA /* LocalPaymentPropertiesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94823E2837A06F00CD59CA /* LocalPaymentPropertiesProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +235,12 @@
 		DF61FDDF2833E4360018C770 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		DF61FDE12833E4560018C770 /* LoggingLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingLevel.swift; sourceTree = "<group>"; };
 		DF61FDE32833E55A0018C770 /* ConsoleLoggger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleLoggger.swift; sourceTree = "<group>"; };
+		DF9481F42837767600CD59CA /* IdGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdGenerator.swift; sourceTree = "<group>"; };
+		DF9481F6283776BD00CD59CA /* UuidGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UuidGenerator.swift; sourceTree = "<group>"; };
+		DF94823728379BE600CD59CA /* AsyncExamples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AsyncExamples.playground; sourceTree = "<group>"; };
+		DF94823828379F6A00CD59CA /* PaymentProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProperties.swift; sourceTree = SOURCE_ROOT; };
+		DF94823B2837A00800CD59CA /* PaymentPropertiesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPropertiesProvider.swift; sourceTree = "<group>"; };
+		DF94823E2837A06F00CD59CA /* LocalPaymentPropertiesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPaymentPropertiesProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				B2043967283516EB00429E20 /* UserInterface */,
+				DF94823D2837A04100CD59CA /* PaymentPropertiesProvider */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -343,6 +355,7 @@
 		B2043965283516BF00429E20 /* Ports */ = {
 			isa = PBXGroup;
 			children = (
+				DF94823A28379FEB00CD59CA /* PaymentPropertiesProvider */,
 			);
 			path = Ports;
 			sourceTree = "<group>";
@@ -350,6 +363,7 @@
 		B2043966283516C500429E20 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				DF94823828379F6A00CD59CA /* PaymentProperties.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -443,6 +457,7 @@
 		DF26CED32832402D00B0F60B = {
 			isa = PBXGroup;
 			children = (
+				DF94823728379BE600CD59CA /* AsyncExamples.playground */,
 				DF26CEDE2832402D00B0F60B /* GoodWeather */,
 				DF26CEEF2832402E00B0F60B /* GoodWeatherTests */,
 				DF26CEF92832402E00B0F60B /* GoodWeatherUITests */,
@@ -648,6 +663,7 @@
 		DF26CF402832604800B0F60B /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				DF9481F32837765700CD59CA /* Generators */,
 				DF61FDDE2833E4250018C770 /* Logging */,
 				DF26CF452832636400B0F60B /* UserInterface */,
 				DF61FD4B2833A3360018C770 /* Capitalized.swift */,
@@ -719,6 +735,31 @@
 			path = Logging;
 			sourceTree = "<group>";
 		};
+		DF9481F32837765700CD59CA /* Generators */ = {
+			isa = PBXGroup;
+			children = (
+				DF9481F42837767600CD59CA /* IdGenerator.swift */,
+				DF9481F6283776BD00CD59CA /* UuidGenerator.swift */,
+			);
+			path = Generators;
+			sourceTree = "<group>";
+		};
+		DF94823A28379FEB00CD59CA /* PaymentPropertiesProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DF94823B2837A00800CD59CA /* PaymentPropertiesProvider.swift */,
+			);
+			path = PaymentPropertiesProvider;
+			sourceTree = "<group>";
+		};
+		DF94823D2837A04100CD59CA /* PaymentPropertiesProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DF94823E2837A06F00CD59CA /* LocalPaymentPropertiesProvider.swift */,
+			);
+			path = PaymentPropertiesProvider;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -787,7 +828,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					DF26CEDB2832402D00B0F60B = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -861,6 +902,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF26CF2A2832535E00B0F60B /* FakeLocationProvider.swift in Sources */,
+				DF9481F52837767600CD59CA /* IdGenerator.swift in Sources */,
 				DF61FDA02833C6B30018C770 /* CoreDataStack.swift in Sources */,
 				DF26CEE22832402D00B0F60B /* ForecastRouterView.swift in Sources */,
 				DF61FDBF2833CF230018C770 /* CoreDataForecastRepositoryAdapter.swift in Sources */,
@@ -903,7 +945,9 @@
 				DF61FDD82833DA710018C770 /* CityEntity+CoreDataClass.swift in Sources */,
 				DF26CF2D2832543A00B0F60B /* FakeForecastRepository.swift in Sources */,
 				B20439752835221C00429E20 /* FoodDetailsView.swift in Sources */,
+				DF94823C2837A00800CD59CA /* PaymentPropertiesProvider.swift in Sources */,
 				DF26CF37283256F000B0F60B /* ForecastRouter.swift in Sources */,
+				DF94823F2837A06F00CD59CA /* LocalPaymentPropertiesProvider.swift in Sources */,
 				B204397E28353AA600429E20 /* LoginView.swift in Sources */,
 				DF26CEE02832402D00B0F60B /* GoodWeatherApp.swift in Sources */,
 				DF26CF1A2832465700B0F60B /* ForecastProviderError.swift in Sources */,
@@ -923,6 +967,7 @@
 				B204396228350BAE00429E20 /* URLSession+ext.swift in Sources */,
 				DF26CF552832863A00B0F60B /* DefaultButtonStyle.swift in Sources */,
 				B204394E2834F5AC00429E20 /* UserCard.swift in Sources */,
+				DF9481F7283776BD00CD59CA /* UuidGenerator.swift in Sources */,
 				DF26CF392832584A00B0F60B /* ForecastDetailsView.swift in Sources */,
 				DF26CF222832486E00B0F60B /* LocationProvider.swift in Sources */,
 				DF26CF5E283291CE00B0F60B /* DayForecastDto.swift in Sources */,
@@ -944,6 +989,7 @@
 				B20439522834F6AB00429E20 /* FakeProfileEventBus .swift in Sources */,
 				B204397128351B0400429E20 /* FoodListViewModel.swift in Sources */,
 				DF26CF132832445A00B0F60B /* DayForecast.swift in Sources */,
+				DF94823928379F6A00CD59CA /* PaymentProperties.swift in Sources */,
 				B20439482834EB9E00429E20 /* ProfileViewModel.swift in Sources */,
 				DF26CF15283244C400B0F60B /* Forecast.swift in Sources */,
 				DF26CF1D2832472D00B0F60B /* ForecastQueries.swift in Sources */,
@@ -1003,6 +1049,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1063,6 +1110,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
